@@ -47,6 +47,7 @@ public class DelicacyFragment extends BaseFragment {
 
     }
 
+    // 这是新加的数据
     @Override
     void initData() {
         //getContent();
