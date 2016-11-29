@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_height_200"
+            android:scaleType="fitXY"
+            android:src="@mipmap/img_my_bg" />
+
+
+        <TextView
+            android:id="@+id/tv_my_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tv_my_head_margin_fifteen"
+            android:text="@string/tv_my"
+            android:textColor="@color/gm"
+            android:textSize="@dimen/tv_my_head_size_fifteen"
+            />
+
+        <ImageView
+            android:id="@+id/my_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_my_setting"
+            android:layout_marginRight="@dimen/tv_my_head_margin_fifteen"
+            android:layout_marginTop="@dimen/tv_my_head_margin_ten"
+            android:layout_alignParentRight="true"/>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_my_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_my_head"
+            app:civ_border_color="@color/gm"
+            app:civ_border_width="2dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_analyse_default" />
+
+
+
+        <TextView
+            android:id="@+id/tv_my_head_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/civ_my_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tv_my_head_margin_fifteen"
+            android:background="@drawable/shape_my_login_border"
+            android:gravity="center"
+            android:text="@string/tv_my_head_login"
+            android:textColor="@color/gm"
+            android:textSize="@dimen/tv_my_login_size_fifteen" />
+
+
+    </RelativeLayout>
+
+
+    <!-- 第一行 我的照片-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/my_height_zero"
+        android:layout_weight="4"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/my_photo_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_height_zero"
+            android:layout_weight="1"
+            android:background="@color/gm"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/my_margin_right_fifteen"
+                android:src="@mipmap/ic_my_photo" />
+
+            <TextView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/tv_my_photo" />
+
+            <ImageView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ic_arrow_right_normal" />
+
+
+        </LinearLayout>
+
+   <include layout="@layout/line_horizontal"
+       />
+
+        <!-- 第二行 我的收藏 -->
+
+        <LinearLayout
+            android:id="@+id/my_collect"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_height_zero"
+            android:layout_weight="1"
+            android:background="@color/gm"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/my_margin_right_fifteen"
+                android:src="@mipmap/ic_my_collect" />
+
+            <TextView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="我的收藏" />
+
+            <ImageView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ic_arrow_right_normal" />
+
+
+        </LinearLayout>
+        <include layout="@layout/line_horizontal"
+            />
+        <!-- 第三行 上传食物数据-->
+        <LinearLayout
+            android:id="@+id/my_upload"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_height_zero"
+            android:layout_weight="1"
+            android:background="@color/gm"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/my_margin_right_fifteen"
+                android:src="@mipmap/ic_my_upload" />
+
+            <TextView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/arrow_right_normal" />
+
+            <ImageView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ic_arrow_right_normal" />
+
+
+        </LinearLayout>
+
+        <include layout="@layout/line_horizontal"
+            />
+
+        <!-- 第四行 我的订单-->
+
+        <LinearLayout
+            android:id="@+id/my_order"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_height_zero"
+            android:layout_weight="1"
+            android:background="@color/gm"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/my_margin_right_fifteen"
+                android:src="@mipmap/ic_my_order" />
+
+            <TextView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="我的订单" />
+
+            <ImageView
+                android:layout_width="@dimen/my_width_zero"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ic_arrow_right_normal" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/my_height_zero"
+        android:layout_weight="2">
+
+    </LinearLayout>
+
+
+</LinearLayout>

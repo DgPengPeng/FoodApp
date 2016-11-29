@@ -1,0 +1,98 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="main_height_zero">0dp</dimen>
+    <dimen name="bottom_rg_layout_margin">3dp</dimen>
+    <dimen name="bottom_rb_width">0dp</dimen>
+
+    <dimen name="library_iv_layout_margin_fifteen">15dp</dimen>
+    <dimen name="library_tv_layout_margintop_thirty">30dp</dimen>
+    <dimen name="library_btn_paddingLeft_five">5dp</dimen>
+    <dimen name="library_btn_layout_margin_ten">10dp</dimen>
+    <dimen name="library_layout_margin_ten">10dp</dimen>
+    <dimen name="library_layout_width_zero">0dp</dimen>
+    <dimen name="library_view_height_forty">40dp</dimen>
+    <dimen name="lirary_margintop_eight">8dp</dimen>
+    <dimen name="library_tv_margin_ten">10dp</dimen>
+    <dimen name="library_gridview_margin_ten">10dp</dimen>
+    <dimen name="library_tv_margintop_ten">10dp</dimen>
+    <dimen name="library_gridview_food_sort_margintop_fifty">50dp</dimen>
+    <dimen name="library_gridview_food_sort_height">360dp</dimen>
+    <dimen name="library_gridview_food_sort_horizontalspacing_ten">10dp</dimen>
+    <dimen name="library_gridview_food_sort_verticalspacing_ten">10dp</dimen>
+    <dimen name="library_tv_margin_size">16sp</dimen>
+    <dimen name="library_gridview_tags_brand_height">400dp</dimen>
+    <dimen name="library_gridview_tags_brand_margintop_fifty">50dp</dimen>
+    <dimen name="library_gridview_tags_brand_horizontalspacing_ten">10dp</dimen>
+    <dimen name="library_gridview_tags_brand_verticalspacing_ten">10dp</dimen>
+    <dimen name="library_chain_drink_tvsize">16sp</dimen>
+    <dimen name="library_gridview_chain_drink_margintop_fifty">50dp</dimen>
+    <dimen name="library_gridview_chain_drink_height">200dp</dimen>
+    <dimen name="library_gridview_chain_drink_horizontalspacing_ten">10dp</dimen>
+    <dimen name="library_gridview_chain_drink_verticalspacing_ten">10dp</dimen>
+
+    <dimen name="line_horizontal_marginleft_twenty">20dp</dimen>
+    <dimen name="line_horizontal_marginright_twenty">20dp</dimen>
+
+    <dimen name="tv_knowledge_item_tail_one_five">5dp</dimen>
+    <dimen name="knowledge_zan_twenty">20dp</dimen>
+    <dimen name="tv_knowledge_item_source_one_ten">10dp</dimen>
+    <dimen name="iv_knowledge_item_images_one_ten">10dp</dimen>
+    <dimen name="iv_knowledge_item_images_one_zero">0dp</dimen>
+    <dimen name="knowledge_padding_ten">10dp</dimen>
+
+    <dimen name="homepage_second_magin_five">5dp</dimen>
+    <dimen name="iv_homepage_card_image_height_240">240dp</dimen>
+    <dimen name="ll_margin_top_185">185dp</dimen>
+    <dimen name="homepage_title_size_twelve">12sp</dimen>
+    <dimen name="homepage_title_margin_ten">10dp</dimen>
+    <dimen name="homepage_title_margin_left_five">5dp</dimen>
+    <dimen name="homepage_description_size_twelve">12sp</dimen>
+    <dimen name="relative_height_forty">40dp</dimen>
+    <dimen name="homepage_publisher_size_eleven">11sp</dimen>
+    <dimen name="homepage_pad_top_five">5dp</dimen>
+    <dimen name="iv_item_homepage_one_280">280dp</dimen>
+
+
+    <dimen name="evaluation_padding_ten">10dp</dimen>
+    <dimen name="tv_item_evaluation_source_thirty">30dp</dimen>
+    <dimen name="evaluation_width_zero">0dp</dimen>
+    <dimen name="item_delicacy_two_pad_top_ten">10dp</dimen>
+    <dimen name="tv_delicacy_item_title_two_fifteen">15dp</dimen>
+    <dimen name="iv1_delicacy_item_images_two_width_zero">0dp</dimen>
+    <dimen name="item_delicacy_twenty">20dp</dimen>
+    <dimen name="tv_delicacy_item_title_one_width_zero">0dp</dimen>
+    <dimen name="tv_delicacy_item_title_one_margin_left_ten">10dp</dimen>
+    <dimen name="item_delicacy_two_margnleft_twenty">20dp</dimen>
+    <dimen name="tv_delicacy_item_tail_one_five">5dp</dimen>
+
+
+    <dimen name="vp_shop_height_zero">0dp</dimen>
+    <dimen name="shop_photo_ten">10dp</dimen>
+    <dimen name="my_height_200">200dp</dimen>
+    <dimen name="tv_my_head_margin_fifteen">15dp</dimen>
+    <dimen name="tv_my_head_size_fifteen">15sp</dimen>
+    <dimen name="tv_my_login_size_fifteen">15sp</dimen>
+    <dimen name="my_height_zero">0dp</dimen>
+    <dimen name="my_width_zero">0dp</dimen>
+    <dimen name="my_margin_right_fifteen">15dp</dimen>
+    <dimen name="item_delicacy_margin_top_ten">10dp</dimen>
+    <dimen name="konwledge_size_ten">10sp</dimen>
+    <dimen name="item_delicacy_margin_ten">10dp</dimen>
+    <dimen name="item_evaluation_marginleft_fifteen">15dp</dimen>
+    <dimen name="item_evaluation_height_fifteen">15dp</dimen>
+    <dimen name="tv_my_head_margin_ten">10dp</dimen>
+
+
+    <dimen name="library_girdview_pad_ten">10dp</dimen>
+    <dimen name="library_girdview_width_forty">40dp</dimen>
+    <dimen name="library_girdview_height_ten">40dp</dimen>
+    <dimen name="library_girdview_margintop">10dp</dimen>
+    <dimen name="library_girdview_textsize">10sp</dimen>
+
+
+    <!--<item name="bottom_view_height" type="dimen" format="float">0.5dp</item>-->
+    <!--<item name="library_view_width" type="dimen" format="float">0.1dp</item>-->
+</resources>

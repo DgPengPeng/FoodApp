@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">FoodSect</string>
+    <string name="main_my_text">我的</string>
+    <string name="main_shop_eat_text">逛吃</string>
+    <string name="main_food_encyclopedia_text">食物百科</string>
+    <string name="library_food_analyse_btn">饮食分析</string>
+    <string name="library_search_compare">搜索对比</string>
+    <string name="library_scan_compare">扫码对比</string>
+    <string name="library_query_food_information">查询食物信息</string>
+    <string name="library_btn_search_text">请输入食物名称</string>
+    <string name="library_gridview_tv_food">食物分类</string>
+    <string name="library_tags_brand_tv">热门品牌</string>
+    <string name="library_chain_drink_tv">连锁餐饮</string>
+    <string name="tv_shop_eat">逛吃</string>
+    <string name="tv_my">我的</string>
+    <string name="tv_my_head_login">点击登录</string>
+    <string name="tv_my_photo">我的照片</string>
+    <string name="arrow_right_normal">上传食物数据</string>
+
+</resources>

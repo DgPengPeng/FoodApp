@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <!--三个Button和上面的控件在 RelativeLayout 中-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/img_home_bg"
+                >
+
+                <ImageView
+                    android:id="@+id/library_title_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_home_logo"
+                    android:layout_margin="@dimen/library_iv_layout_margin_fifteen"
+                    android:layout_centerHorizontal="true"/>
+
+                <!--搜索栏上面的文字-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/library_query_food_information"
+                    android:textSize="18sp"
+                    android:textColor="#ffffff"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/library_title_iv"
+                    android:layout_marginTop="@dimen/library_tv_layout_margintop_thirty"
+                    />
+
+                <!--搜索栏-->
+                <Button
+                    android:id="@+id/library_btn_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/ic_home_search"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/library_btn_paddingLeft_five"
+                    android:text="@string/library_btn_search_text"
+                    android:textColor="#D5813F"
+                    android:background="#fff"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/library_btn_layout_margin_ten"
+                    />
+
+                <!--里面的三个Button-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignParentBottom="true"
+                    android:background="#f1f7f1"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="#FFFFFF"
+                        android:layout_margin="@dimen/library_layout_margin_ten"
+                        >
+                        <Button
+                            android:id="@+id/library_btn_analysis"
+                            android:layout_width="@dimen/library_layout_width_zero"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/checked_library_analyse"
+                            android:text="@string/library_food_analyse_btn"
+                            android:background="@null"
+                            />
+
+                         <View
+                             android:layout_width="0.1dp"
+                             android:layout_height="@dimen/library_view_height_forty"
+                             android:layout_marginTop="@dimen/lirary_margintop_eight"
+                             android:background="#000"/>
+
+                        <Button
+                            android:id="@+id/library_btn_compare"
+                            android:layout_width="@dimen/library_layout_width_zero"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/checked_library_search_compare"
+                            android:text="@string/library_search_compare"
+                            android:background="@null"
+                            />
+
+                        <View
+                            android:layout_width="0.1dp"
+                            android:layout_height="@dimen/library_view_height_forty"
+                            android:layout_marginTop="@dimen/lirary_margintop_eight"
+                            android:background="#000"/>
+                        <Button
+                            android:id="@+id/library_btn_scancompare"
+                            android:layout_width="@dimen/library_layout_width_zero"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/checked_library_scan_compare"
+                            android:text="@string/library_scan_compare"
+                            android:background="@null"
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!--GridView-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#f1f7f1"
+                >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/library_gridview_margin_ten"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@mipmap/ic_home_category_bg"
+                        />
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/library_tv_margintop_ten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/library_gridview_tv_food"
+                        android:textSize="16sp"
+                        />
+
+                    <GridView
+                        android:id="@+id/library_food_sort"
+                        android:background="#FFFFFF"
+                        android:layout_marginTop="@dimen/library_gridview_food_sort_margintop_fifty"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/library_gridview_food_sort_height"
+                        android:layout_centerHorizontal="true"
+                        android:numColumns="3"
+                        android:horizontalSpacing="@dimen/library_gridview_food_sort_horizontalspacing_ten"
+                        android:verticalSpacing="@dimen/library_gridview_food_sort_verticalspacing_ten"
+                        android:scrollbars="none"
+                        >
+                    </GridView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/library_btn_layout_margin_ten"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@mipmap/ic_home_category_bg"
+                        />
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/library_tv_margin_ten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/library_tags_brand_tv"
+                        android:textSize="@dimen/library_tv_margin_size"
+                        />
+
+                    <GridView
+                        android:id="@+id/library_tags_brand"
+                        android:background="#FFFFFF"
+                        android:layout_marginTop="@dimen/library_gridview_tags_brand_margintop_fifty"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/library_gridview_tags_brand_height"
+                        android:layout_centerHorizontal="true"
+                        android:numColumns="3"
+                        android:horizontalSpacing="@dimen/library_gridview_tags_brand_horizontalspacing_ten"
+                        android:verticalSpacing="@dimen/library_gridview_tags_brand_verticalspacing_ten"
+                        android:scrollbars="none"
+                        >
+                    </GridView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/library_gridview_margin_ten"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@mipmap/ic_home_category_bg"
+                        />
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/library_tv_margintop_ten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/library_chain_drink_tv"
+                        android:textSize="@dimen/library_chain_drink_tvsize"
+                        />
+
+                    <GridView
+                        android:id="@+id/library_chain_drink"
+                        android:background="#FFFFFF"
+                        android:layout_marginTop="@dimen/library_gridview_chain_drink_margintop_fifty"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/library_gridview_chain_drink_height"
+                        android:layout_centerHorizontal="true"
+                        android:numColumns="3"
+                        android:horizontalSpacing="@dimen/library_gridview_chain_drink_horizontalspacing_ten"
+                        android:verticalSpacing="@dimen/library_gridview_chain_drink_verticalspacing_ten"
+                        android:scrollbars="none"
+                        >
+                    </GridView>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

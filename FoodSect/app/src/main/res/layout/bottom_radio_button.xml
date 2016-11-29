@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/bottom_rg_layout_margin"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_main_library"
+            android:layout_width="@dimen/bottom_rb_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/checked_tab_library"
+            android:gravity="center"
+            android:text="@string/main_food_encyclopedia_text"
+            android:textColor="@color/color" />
+
+        <RadioButton
+            android:id="@+id/rb_main_shop_eat"
+            android:layout_width="@dimen/bottom_rb_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/checked_tab_homepage"
+            android:gravity="center"
+            android:text="@string/main_shop_eat_text"
+            android:textColor="@color/color" />
+
+        <RadioButton
+            android:id="@+id/rb_main_my"
+            android:layout_width="@dimen/bottom_rb_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/checked_tab_my"
+            android:gravity="center"
+            android:text="@string/main_my_text"
+            android:textColor="@color/color" />
+
+    </RadioGroup>
+
+</LinearLayout>

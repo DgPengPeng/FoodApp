@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/main_frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_height_zero"
+        android:layout_weight="1" />
+
+    <include layout="@layout/line_horizontal_long"/>
+
+    <include layout="@layout/bottom_radio_button"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       />
+
+</LinearLayout>

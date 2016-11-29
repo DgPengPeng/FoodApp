@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:layout_marginTop="@dimen/evaluation_padding_ten">
+    <ImageView
+        android:id="@+id/iv_item_evaluation_background"
+        android:layout_marginTop="@dimen/item_evaluation_marginleft_fifteen"
+        android:layout_marginLeft="@dimen/item_evaluation_marginleft_fifteen"
+        android:layout_marginRight="@dimen/item_evaluation_marginleft_fifteen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="@dimen/item_evaluation_marginleft_fifteen">
+
+        <TextView
+            android:id="@+id/tv_item_evaluation_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/gm"
+            android:maxEms="15"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/tv_item_evaluation_source"
+            android:textColor="@color/gm"
+            android:padding="@dimen/item_evaluation_marginleft_fifteen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_item_evaluation_tail"
+            android:textColor="@color/gm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@mipmap/ic_read"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

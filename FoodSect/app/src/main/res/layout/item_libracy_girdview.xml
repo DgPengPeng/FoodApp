@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/library_girdview_pad_ten">
+
+    <ImageView
+        android:id="@+id/item_group_civ"
+        android:layout_width="@dimen/library_girdview_width_forty"
+        android:layout_height="@dimen/library_girdview_height_ten"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:id="@+id/item_group_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/library_girdview_margintop"
+        android:layout_gravity="center"
+        android:textSize="@dimen/library_girdview_textsize"
+        android:maxEms="8"/>
+</LinearLayout>
