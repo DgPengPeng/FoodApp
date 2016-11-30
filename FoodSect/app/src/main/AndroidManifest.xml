@@ -22,7 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.DelicacyDetailsActivity"></activity>
+        <activity android:name=".activity.DelicacyDetailsActivity" />
+        <activity android:name=".activity.KnowledgeDetailsActivity" />
+        <activity android:name=".activity.HomePageDetailsActivity"/>
+        <activity android:name=".activity.HomeDetailsWebViewActivity"/>
     </application>
 
 </manifest>

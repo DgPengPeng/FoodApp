@@ -32,7 +32,7 @@ public class KnowledgeAdapter extends BaseAdapter {
     }
 
     public void setData(List<KnowleageBean.FeedsBean> data) {
-        this.data .addAll(data);
+        this.data = data;
         notifyDataSetChanged();
     }
 

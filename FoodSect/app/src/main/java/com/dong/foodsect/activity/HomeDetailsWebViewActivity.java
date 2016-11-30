@@ -1,9 +1,6 @@
 package com.dong.foodsect.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -13,21 +10,23 @@ import android.widget.ImageView;
 
 import com.dong.foodsect.R;
 
-public class DelicacyDetailsActivity extends BaseActivity implements View.OnClickListener {
-
+/**
+ * Created by dllo on 16/11/30.
+ */
+public class HomeDetailsWebViewActivity extends BaseActivity implements View.OnClickListener {
 
     private WebView webView;
     private ImageView backIv;
 
     @Override
     int setLayout() {
-        return R.layout.activity_delicacy_details;
+        return R.layout.activity_home_page_webview;
     }
 
     @Override
     void initView() {
-        webView = (WebView) findViewById(R.id.delicacy_web);
-        backIv = (ImageView) findViewById(R.id.del_back);
+        webView = bindView(R.id.home_page_details_web);
+        backIv = bindView(R.id.home_web_back);
         backIv.setOnClickListener(this);
     }
 
@@ -35,12 +34,13 @@ public class DelicacyDetailsActivity extends BaseActivity implements View.OnClic
     void initData() {
         getWebViewData();
 
+
     }
 
     private void getWebViewData() {
         Intent intent = getIntent();
-        String link = intent.getStringExtra("url");
-        Log.d("sss", link);
+        String link = intent.getStringExtra("link");
+
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -80,6 +80,7 @@ public class DelicacyDetailsActivity extends BaseActivity implements View.OnClic
         set.setDisplayZoomControls(true);
         // 设置默认字体大小
         set.setDefaultFontSize(12);
+        // webView.getSettings().setSupportZoom(false);
     }
 
     @Override

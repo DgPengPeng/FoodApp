@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dong.foodsect.R;
+import com.dong.foodsect.Tools.HomePageClick;
 import com.dong.foodsect.bean.HomePageBean;
 import com.squareup.picasso.Picasso;
 
@@ -20,8 +21,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by dllo on 16/11/23.
- *
- *
+ * <p/>
+ * <p/>
  * 这是  首页  适配器
  */
 public class HomePageAdapter extends RecyclerView.Adapter {
@@ -36,16 +37,27 @@ public class HomePageAdapter extends RecyclerView.Adapter {
     private static final int CONTENT_TYPE_ONE = 6;
     private static final int CONTENT_TYPE_TWO = 5;
 //    private static final int COUNT = 20;
+    private HomePageClick homePageClick;
+
+
+    public void setHomePageClick(HomePageClick homePageClick) {
+        this.homePageClick = homePageClick;
+
+    }
 
     public HomePageAdapter(Context context) {
         this.context = context;
+        data = new ArrayList<>();
     }
 
     public void setData(List<HomePageBean.FeedsBean> data) {
-        this.data = data;
+        this.data.addAll(data);
         notifyDataSetChanged();
     }
 
+    public void setClear() {
+        data.clear();
+    }
 
     @Override
     public int getItemViewType(int position) {
@@ -72,24 +84,31 @@ public class HomePageAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder( RecyclerView.ViewHolder holder,final int position) {
         int type = getItemViewType(position);
         switch (type) {
             case CONTENT_TYPE_ONE:
-                OneViewHolder oneViewHolder = (OneViewHolder) holder;
+                final OneViewHolder oneViewHolder = (OneViewHolder) holder;
                 Picasso.with(context).load(data.get(position).getCard_image()).into(oneViewHolder.ivOne);
+
                 break;
             case CONTENT_TYPE_TWO:
                 TwoViewHolder twoViewHolder = (TwoViewHolder) holder;
-            twoViewHolder.tvTitle.setText(data.get(position).getTitle());
-            twoViewHolder.tvDescription.setText(data.get(position).getDescription());
-            twoViewHolder.tvPublisher.setText(data.get(position).getPublisher());
-            twoViewHolder.tvLike.setText(data.get(position).getLike_ct() + "");
-            Picasso.with(context).load(data.get(position).getCard_image()).into(twoViewHolder.ivCardTwo);
-            Picasso.with(context).load(data.get(position).getPublisher_avatar()).into(twoViewHolder.ivAvaTwo);
-            break;
+                twoViewHolder.tvTitle.setText(data.get(position).getTitle());
+                twoViewHolder.tvDescription.setText(data.get(position).getDescription());
+                twoViewHolder.tvPublisher.setText(data.get(position).getPublisher());
+                twoViewHolder.tvLike.setText(data.get(position).getLike_ct() + "");
+                Picasso.with(context).load(data.get(position).getCard_image()).into(twoViewHolder.ivCardTwo);
+                Picasso.with(context).load(data.get(position).getPublisher_avatar()).into(twoViewHolder.ivAvaTwo);
+                break;
         }
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                homePageClick.HomePageListenter(position,data.get(position).getContent_type());
+            }
+        });
     }
 
     @Override

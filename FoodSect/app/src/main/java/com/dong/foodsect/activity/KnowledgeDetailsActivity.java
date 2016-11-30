@@ -13,28 +13,26 @@ import android.widget.ImageView;
 
 import com.dong.foodsect.R;
 
-public class DelicacyDetailsActivity extends BaseActivity implements View.OnClickListener {
-
+public class KnowledgeDetailsActivity extends BaseActivity implements View.OnClickListener {
 
     private WebView webView;
     private ImageView backIv;
 
     @Override
     int setLayout() {
-        return R.layout.activity_delicacy_details;
+        return R.layout.activity_knowledge_details;
     }
 
     @Override
     void initView() {
-        webView = (WebView) findViewById(R.id.delicacy_web);
-        backIv = (ImageView) findViewById(R.id.del_back);
+        webView = bindView(R.id.knowledge_web);
+        backIv = bindView(R.id.know_back);
         backIv.setOnClickListener(this);
     }
 
     @Override
     void initData() {
         getWebViewData();
-
     }
 
     private void getWebViewData() {
@@ -80,6 +78,7 @@ public class DelicacyDetailsActivity extends BaseActivity implements View.OnClic
         set.setDisplayZoomControls(true);
         // 设置默认字体大小
         set.setDefaultFontSize(12);
+
     }
 
     @Override

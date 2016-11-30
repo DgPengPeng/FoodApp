@@ -33,4 +33,6 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.youth.banner:banner:1.4.4'
     compile 'com.github.userswlwork:pull-to-refresh:1.0.0'
+
+    compile 'com.github.jdsjlzx:LRecyclerView:1.2.8'
 }

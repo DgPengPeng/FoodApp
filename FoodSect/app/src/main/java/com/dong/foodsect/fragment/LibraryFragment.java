@@ -12,10 +12,9 @@ import com.android.volley.toolbox.Volley;
 import com.dong.foodsect.R;
 import com.dong.foodsect.adapter.LibraryAdapter;
 import com.dong.foodsect.bean.LibraryBean;
-import com.dong.foodsect.urltool.AllUrl;
+import com.dong.foodsect.Tools.AllUrl;
 import com.google.gson.Gson;
 
-import java.net.URL;
 import java.util.List;
 
 /**

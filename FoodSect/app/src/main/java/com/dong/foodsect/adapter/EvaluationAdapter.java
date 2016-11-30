@@ -1,6 +1,7 @@
 package com.dong.foodsect.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +18,12 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/11/24.
- *
+ * <p/>
  * 这是 测评 适配器
  */
-public class EvaluationAdapter extends BaseAdapter{
+public class EvaluationAdapter extends BaseAdapter {
 
-    private List<EvaluationBean.FeedsBean>data;
+    private List<EvaluationBean.FeedsBean> data;
     private Context context;
 
     public EvaluationAdapter(Context context) {
@@ -31,11 +32,13 @@ public class EvaluationAdapter extends BaseAdapter{
     }
 
     public void setData(List<EvaluationBean.FeedsBean> data) {
-        this.data .addAll(data);
+        this.data = data;
+        Log.e("datadata", this.data.size() + "");
         notifyDataSetChanged();
     }
+
     // 刷新数据
-    public void Clear(){
+    public void Clear() {
         data.clear();
     }
 
@@ -56,12 +59,12 @@ public class EvaluationAdapter extends BaseAdapter{
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-       EvaViewHolder evaViewHolder = null;
-        if (view == null){
-            view = LayoutInflater.from(context).inflate(R.layout.item_evaluation_listview,viewGroup,false);
+        EvaViewHolder evaViewHolder = null;
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.item_evaluation_listview, viewGroup, false);
             evaViewHolder = new EvaViewHolder(view);
             view.setTag(evaViewHolder);
-        }else {
+        } else {
             evaViewHolder = (EvaViewHolder) view.getTag();
         }
         evaViewHolder.tvSource.setText(data.get(i).getSource());
@@ -72,9 +75,10 @@ public class EvaluationAdapter extends BaseAdapter{
     }
 
 
-    class EvaViewHolder{
+    class EvaViewHolder {
         private ImageView ivBackground;
-        private TextView tvSource,tvTitle,tvTail;
+        private TextView tvSource, tvTitle, tvTail;
+
         public EvaViewHolder(View view) {
 
             ivBackground = (ImageView) view.findViewById(R.id.iv_item_evaluation_background);

@@ -1,21 +1,19 @@
 package com.dong.foodsect.fragment;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.dong.foodsect.R;
+import com.dong.foodsect.activity.KnowledgeDetailsActivity;
 import com.dong.foodsect.adapter.KnowledgeAdapter;
 import com.dong.foodsect.bean.KnowleageBean;
-import com.dong.foodsect.urltool.AllUrl;
+import com.dong.foodsect.Tools.AllUrl;
 import com.dong.foodsect.volleydemo.NetHelper;
 import com.dong.foodsect.volleydemo.NetListener;
-import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
@@ -32,6 +30,7 @@ public class KnowledgeFragment extends BaseFragment {
     private KnowledgeAdapter knowledgeAdapter;
 
     private int i = 1;
+    private List<KnowleageBean.FeedsBean> data;
 
     @Override
     protected int setLayout() {
@@ -130,8 +129,26 @@ public class KnowledgeFragment extends BaseFragment {
         NetHelper.MyRequest(url, KnowleageBean.class, new NetListener<KnowleageBean>() {
             @Override
             public void successListener(KnowleageBean response) {
-                List<KnowleageBean.FeedsBean> data = response.getFeeds();
+                List<KnowleageBean.FeedsBean>  mid = response.getFeeds();
+                if (data == null){
+                    data = mid;
+                }else {
+                    for (int i = 0; i < mid.size(); i++) {
+                        data.add(mid.get(i));
+                    }
+                }
                 knowledgeAdapter.setData(data);
+
+
+                pullToRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(getContext(), KnowledgeDetailsActivity.class);
+                        String url = data.get(i - 1).getLink();
+                        intent.putExtra("url", url);
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override

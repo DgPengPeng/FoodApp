@@ -2,39 +2,27 @@ package com.dong.foodsect.fragment;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.dong.foodsect.R;
 import com.dong.foodsect.activity.EvaluationDetailsActivity;
 import com.dong.foodsect.adapter.EvaluationAdapter;
 import com.dong.foodsect.bean.EvaluationBean;
-import com.dong.foodsect.carousel.CarouselBean;
-import com.dong.foodsect.carousel.GlideImageLoder;
-import com.dong.foodsect.urltool.AllUrl;
+import com.dong.foodsect.Tools.AllUrl;
 import com.dong.foodsect.volleydemo.NetHelper;
 import com.dong.foodsect.volleydemo.NetListener;
-import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.youth.banner.Banner;
-import com.youth.banner.BannerConfig;
-import com.youth.banner.Transformer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by dllo on 16/11/23.
- * <p>
+ * <p/>
  * 这是 测评 Fragment
  */
 public class EvaluationFragment extends BaseFragment {
@@ -43,6 +31,7 @@ public class EvaluationFragment extends BaseFragment {
     // 上拉刷新的控件
     private PullToRefreshListView pullToRefreshListView;
     private EvaluationAdapter evaluationAdapter;
+
 
     // 轮播图
     //private List<String> data;
@@ -73,14 +62,7 @@ public class EvaluationFragment extends BaseFragment {
         //getHead();
         getNewListView();
 
-//        pullToRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//
-//                Intent intent = new Intent(getContext(), EvaluationDetailsActivity.class);
-//                intent.putExtra("url",)
-//            }
-//        });
+
     }
 
     public String Url_all(int i) {
@@ -106,21 +88,35 @@ public class EvaluationFragment extends BaseFragment {
 
             }
         });
+
+
     }
+
 
     private void getListView(final String url) {
         NetHelper.MyRequest(url, EvaluationBean.class, new NetListener<EvaluationBean>() {
             @Override
             public void successListener(EvaluationBean response) {
-                data = response.getFeeds();
+                List<EvaluationBean.FeedsBean> mid = response.getFeeds();
+                if (data == null) {
+                    data = mid;
+                } else {
+                    for (int i = 0; i < mid.size(); i++) {
+                        data.add(mid.get(i));
+                    }
+                }
                 evaluationAdapter.setData(data);
+
+
                 pullToRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            Intent intent = new Intent(getContext(), EvaluationDetailsActivity.class);
-                            String url = data.get(i).getLink();
-                            intent.putExtra("url", url);
-                            startActivity(intent);
+
+                        Intent intent = new Intent(getContext(), EvaluationDetailsActivity.class);
+                        String url = data.get(i - 1).getLink();
+                        intent.putExtra("url", url);
+                        startActivity(intent);
+
 
                     }
                 });

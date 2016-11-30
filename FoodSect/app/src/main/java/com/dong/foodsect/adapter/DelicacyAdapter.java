@@ -36,7 +36,7 @@ public class DelicacyAdapter extends BaseAdapter {
     }
 
     public void setData(List<DelicacyBean.FeedsBean> data) {
-        this.data.addAll(data);
+        this.data = data;
         notifyDataSetChanged();
     }
     public void clearData(){

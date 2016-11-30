@@ -1,4 +1,4 @@
-package com.dong.foodsect.urltool;
+package com.dong.foodsect.Tools;
 
 /**
  * Created by dllo on 16/11/24.
@@ -26,6 +26,7 @@ public class AllUrl {
 
     public static final String KNOW_FOOTER = "&category=3&per=10";
     public static final String DEL_FOOTER = "&category=4&per=10";
+    public static final String HOME_PAGE_FOOTER = "&category=1&per=10";
 
 
 
