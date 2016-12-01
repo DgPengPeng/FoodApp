@@ -96,7 +96,14 @@ public class HomePageFragment extends BaseFragment implements HomePageClick {
         NetHelper.MyRequest(url, HomePageBean.class, new NetListener<HomePageBean>() {
             @Override
             public void successListener(HomePageBean response) {
-                data = response.getFeeds();
+                List<HomePageBean.FeedsBean> mid = response.getFeeds();
+                if (data == null){
+                    data = mid;
+                }else {
+                    for (int i = 0; i < mid.size(); i++) {
+                        data.add(mid.get(i));
+                    }
+                }
                 homePageAdapter.setData(data);
             }
 

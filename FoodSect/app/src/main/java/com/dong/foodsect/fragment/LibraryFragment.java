@@ -1,7 +1,10 @@
 package com.dong.foodsect.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.android.volley.RequestQueue;
@@ -10,9 +13,16 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.dong.foodsect.R;
+import com.dong.foodsect.activity.ChainDetailsActivity;
+import com.dong.foodsect.activity.GroupDetailsActivity;
+import com.dong.foodsect.activity.TagsDetailsActivity;
 import com.dong.foodsect.adapter.LibraryAdapter;
+import com.dong.foodsect.adapter.LibraryChanAdapter;
+import com.dong.foodsect.adapter.LibraryTagsAdapter;
 import com.dong.foodsect.bean.LibraryBean;
 import com.dong.foodsect.Tools.AllUrl;
+import com.dong.foodsect.volleydemo.NetHelper;
+import com.dong.foodsect.volleydemo.NetListener;
 import com.google.gson.Gson;
 
 import java.util.List;
@@ -21,13 +31,25 @@ import java.util.List;
  * Created by dllo on 16/11/22.
  * 这是 食物百科  Fragment
  */
-public class LibraryFragment extends BaseFragment{
+public class LibraryFragment extends BaseFragment {
 
-//    private LibraryAdapter libraryAdapter;
-    private GridView foodGv,tagsGv,chainGv;
+    //    private LibraryAdapter libraryAdapter;
+    private GridView foodGv, tagsGv, chainGv;
     private String url = AllUrl.FOODENCYCLOPEDIA;
+    private List<LibraryBean.GroupBean.CategoriesBean> data;
+    private List<LibraryBean.GroupBean.CategoriesBean> dataTags;
+    private List<LibraryBean.GroupBean.CategoriesBean> dataChan;
+    private LibraryBean libBean = new LibraryBean();
 
-    // 可以传值,相当 new Fragment
+    private LibraryAdapter libraryAdapter;
+    private LibraryTagsAdapter libraryTagsAdapter;
+    private LibraryChanAdapter libraryChanAdapter;
+    private String kind;
+    private String id;
+    private String kind1;
+    private String id1;
+
+    // 可以传值,相当 fragment 复用
     public static LibraryFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -36,6 +58,7 @@ public class LibraryFragment extends BaseFragment{
         fragment.setArguments(args);
         return fragment;
     }
+
     @Override
     protected int setLayout() {
         return R.layout.fragment_library;
@@ -47,75 +70,107 @@ public class LibraryFragment extends BaseFragment{
         tagsGv = (GridView) view.findViewById(R.id.library_tags_brand);
         chainGv = (GridView) view.findViewById(R.id.library_chain_drink);
 
+
+
     }
 
     @Override
     void initData() {
+        getGirdViewLis();
 
-        RequestQueue queue = Volley.newRequestQueue(mcontext);
-        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
+    }
+
+
+
+
+
+    private void getGirdViewLis() {
+        NetHelper.MyRequest(url, LibraryBean.class, new NetListener<LibraryBean>() {
             @Override
-            public void onResponse(String response) {
+            public void successListener(final LibraryBean response) {
 
-                Gson gson = new Gson();
-                LibraryBean bean = gson.fromJson(response,LibraryBean.class);
-                List<LibraryBean.GroupBean.CategoriesBean> data = bean.getGroup().get(0).getCategories();
-                LibraryAdapter libraryAdapter = new LibraryAdapter(mcontext);
+                data = response.getGroup().get(0).getCategories();
+                dataTags = response.getGroup().get(1).getCategories();
+                dataChan= response.getGroup().get(2).getCategories();
+
+                libraryAdapter = new LibraryAdapter(mcontext);
+                libraryTagsAdapter = new LibraryTagsAdapter(mcontext);
+                libraryChanAdapter = new LibraryChanAdapter(mcontext);
+
                 libraryAdapter.setDatas(data);
+                libraryTagsAdapter.setDatas(dataTags);
+                libraryChanAdapter.setDatas(dataChan);
+
                 foodGv.setAdapter(libraryAdapter);
+                tagsGv.setAdapter(libraryTagsAdapter);
+                chainGv.setAdapter(libraryChanAdapter);
+
+                foodGv(response);
+                tagsGv(response);
+                chainGv(response);
+
+
             }
-        }, new Response.ErrorListener() {
+
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void errorListener(VolleyError error) {
 
             }
         });
-        queue.add(stringRequest);
+    }
 
-
-
-
-        RequestQueue queue1 = Volley.newRequestQueue(mcontext);
-        StringRequest stringRequest1 = new StringRequest(url, new Response.Listener<String>() {
+    private void chainGv(final LibraryBean response) {
+        chainGv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onResponse(String response) {
-
-                Gson gson = new Gson();
-                LibraryBean bean = gson.fromJson(response,LibraryBean.class);
-                List<LibraryBean.GroupBean.CategoriesBean> data = bean.getGroup().get(1).getCategories();
-                LibraryAdapter tagsAdapter = new LibraryAdapter(mcontext);
-                tagsAdapter.setDatas(data);
-                tagsGv.setAdapter(tagsAdapter);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), ChainDetailsActivity.class);
+                kind = response.getGroup().get(2).getKind();
+                id = dataChan.get(i).getId() + "";
+                Log.d("xxx", id);
+//                intent.putExtra("kind",kind);
+//                intent.putExtra("id",id);
+                String urlChan = AllUrl.FOOD_ONE + kind + AllUrl.FOOD_TWO + id + AllUrl.FOOD_THREE ;
+                intent.putExtra("urlChan",urlChan);
+                startActivity(intent);
             }
         });
-        queue1.add(stringRequest1);
+    }
 
-
-
-        RequestQueue queue2 = Volley.newRequestQueue(mcontext);
-        StringRequest stringRequest2 = new StringRequest(url, new Response.Listener<String>() {
+    private void tagsGv(final LibraryBean response) {
+        tagsGv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onResponse(String response) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Gson gson = new Gson();
-                LibraryBean bean = gson.fromJson(response,LibraryBean.class);
-                List<LibraryBean.GroupBean.CategoriesBean> data = bean.getGroup().get(2).getCategories();
-                LibraryAdapter chanAdapter = new LibraryAdapter(mcontext);
-                chanAdapter.setDatas(data);
-                chainGv.setAdapter(chanAdapter);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+                Intent intent = new Intent(getActivity(), TagsDetailsActivity.class);
+                kind = response.getGroup().get(1).getKind();
+                id = dataTags.get(i).getId() + "";
 
+                String urlTags = AllUrl.FOOD_ONE + kind + AllUrl.FOOD_TWO + id + AllUrl.FOOD_THREE ;
+                Log.d("qwe", urlTags);
+                intent.putExtra("urlTags",urlTags);
+//                intent.putExtra("kind",kind);
+//                intent.putExtra("id",id);
+                startActivity(intent);
             }
         });
-        queue2.add(stringRequest2);
+    }
+
+    private void foodGv(final LibraryBean response) {
+        foodGv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intent = new Intent(getActivity(), GroupDetailsActivity.class);
+                kind = response.getGroup().get(0).getKind();
+                id = data.get(i).getId() + "";
+                Log.d("xxx", id);
+//                intent.putExtra("kind",kind);
+//                intent.putExtra("id",id);
+                String urlGroup = AllUrl.FOOD_ONE + kind + AllUrl.FOOD_TWO + id + AllUrl.FOOD_THREE ;
+                intent.putExtra("urlGroup",urlGroup);
+                startActivity(intent);
+            }
+        });
     }
 
 

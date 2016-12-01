@@ -26,6 +26,9 @@
         <activity android:name=".activity.KnowledgeDetailsActivity" />
         <activity android:name=".activity.HomePageDetailsActivity"/>
         <activity android:name=".activity.HomeDetailsWebViewActivity"/>
+        <activity android:name=".activity.GroupDetailsActivity"/>
+        <activity android:name=".activity.TagsDetailsActivity"/>
+        <activity android:name=".activity.ChainDetailsActivity"/>
     </application>
 
 </manifest>

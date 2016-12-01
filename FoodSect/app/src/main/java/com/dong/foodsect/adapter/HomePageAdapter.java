@@ -51,7 +51,8 @@ public class HomePageAdapter extends RecyclerView.Adapter {
     }
 
     public void setData(List<HomePageBean.FeedsBean> data) {
-        this.data.addAll(data);
+//        this.data.addAll(data);
+        this.data = data;
         notifyDataSetChanged();
     }
 

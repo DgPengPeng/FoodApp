@@ -29,6 +29,17 @@ public class AllUrl {
     public static final String HOME_PAGE_FOOTER = "&category=1&per=10";
 
 
+    // 食物百科
+    public static final String FOOD_ONE = "http://food.boohee.com/fb/v1/foods?kind=";
+    public static final String FOOD_TWO = "&value=";
+    public static final String FOOD_THREE = "&order_by=1&page=";
+    public static final String FOOD_FOUR = "&order_asc=0";
+
+
+
+    // http://food.boohee.com/fb/v1/foods?kind=brand&value=0(&sub_value=13)&order_by=1&page=1&order_asc=0
+
+   // http://food.boohee.com/fb/v1/foods?kind=group&value=1&order_by=1&page=2&order_asc=0
 
 
 
