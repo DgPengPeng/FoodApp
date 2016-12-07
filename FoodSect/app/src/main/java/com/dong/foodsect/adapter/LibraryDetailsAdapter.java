@@ -1,6 +1,7 @@
 package com.dong.foodsect.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,18 +65,32 @@ public class LibraryDetailsAdapter extends BaseAdapter {
         libDetViewHolder.weightTv.setText(data.get(i).getWeight());
         libDetViewHolder.caloryTv.setText(data.get(i).getCalory());
         Picasso.with(context).load(data.get(i).getThumb_image_url()).into(libDetViewHolder.thumbIv);
+        int num = data.get(i).getHealth_light();
+        Log.d("LibraryDetailsAdapter", "num:" + num);
+
+        switch (num){
+            case 1:
+                libDetViewHolder.pointIv.setImageResource(R.mipmap.ic_food_light_green);
+                break;
+            case 2:
+                libDetViewHolder.pointIv.setImageResource(R.mipmap.ic_food_light_yellow);
+                break;
+            case 3:
+                libDetViewHolder.pointIv.setImageResource(R.mipmap.ic_food_light_red);
+                break;
+        }
         return view;
     }
 
     class LibDetViewHolder{
         private TextView nameTv,weightTv,caloryTv;
-        private ImageView thumbIv;
+        private ImageView thumbIv,pointIv;
         public LibDetViewHolder(View view) {
 
             nameTv = (TextView) view.findViewById(R.id.tv_name_egg);
             weightTv = (TextView) view.findViewById(R.id.tv_weight);
             caloryTv = (TextView) view.findViewById(R.id.tv_calory);
-
+            pointIv = (ImageView) view.findViewById(R.id.iv_point);
             thumbIv = (ImageView) view.findViewById(R.id.iv_thumb_image_url);
         }
     }

@@ -91,6 +91,36 @@
     <dimen name="library_girdview_height_ten">40dp</dimen>
     <dimen name="library_girdview_margintop">10dp</dimen>
     <dimen name="library_girdview_textsize">10sp</dimen>
+    <dimen name="details_group_mragin_left">5dp</dimen>
+    <dimen name="details_tags_margin_left_ten">10dp</dimen>
+    <dimen name="home_page_margin_top_ten">10dp</dimen>
+    <dimen name="home_page_height_zero">0dp</dimen>
+    <dimen name="home_page_web_margin_right_fifteen">15dp</dimen>
+    <dimen name="knowledge_margin_right_fifteen">15dp</dimen>
+    <dimen name="my_details_text_size_fifteen">15sp</dimen>
+    <dimen name="my_details_margin_left_twenty">20dp</dimen>
+    <dimen name="my_delicacy_margin_ten">10dp</dimen>
+    <dimen name="my_details_text_size_twenty">20sp</dimen>
+    <dimen name="my_details_five">5dp</dimen>
+    <dimen name="my_details_margin_left_ten">10dp</dimen>
+    <dimen name="my_set_details_ten">10dp</dimen>
+    <dimen name="my_set_details_five">5dp</dimen>
+    <dimen name="my_set_details_text_size_twenty">20sp</dimen>
+    <dimen name="my_set_details_fifteen">15dp</dimen>
+    <dimen name="my_set_margin_left_fifteen">15dp</dimen>
+    <dimen name="my_set_margin_margin_left_fifteen">15dp</dimen>
+    <dimen name="my_set_ten">10dp</dimen>
+    <dimen name="my_set_thirteen">13sp</dimen>
+    <dimen name="item_library_details_width_thirty">30dp</dimen>
+    <dimen name="item_library_details_margin">5dp</dimen>
+    <dimen name="item_library_details_margin_top_five">5dp</dimen>
+    <dimen name="line_horizontal_marginleft_fifty">50dp</dimen>
+    
+    
+    <dimen name="pop_height">100dp</dimen>
+    <dimen name="pop_height_up">270dp</dimen>
+    <dimen name="pop_tv_margin_five">5dp</dimen>
+    <dimen name="item_margin_right_ten">10dp</dimen>
 
 
     <!--<item name="bottom_view_height" type="dimen" format="float">0.5dp</item>-->

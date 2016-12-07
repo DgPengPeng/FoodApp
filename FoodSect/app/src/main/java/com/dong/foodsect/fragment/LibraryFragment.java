@@ -78,6 +78,9 @@ public class LibraryFragment extends BaseFragment {
     void initData() {
         getGirdViewLis();
 
+
+
+
     }
 
 
@@ -127,8 +130,13 @@ public class LibraryFragment extends BaseFragment {
                 kind = response.getGroup().get(2).getKind();
                 id = dataChan.get(i).getId() + "";
                 Log.d("xxx", id);
+                String name = dataChan.get(i).getName();
+                intent.putExtra("name",name);
 //                intent.putExtra("kind",kind);
 //                intent.putExtra("id",id);
+                intent.putExtra("kind",kind);
+                intent.putExtra("id",id);
+                intent.putExtra("pos",i);
                 String urlChan = AllUrl.FOOD_ONE + kind + AllUrl.FOOD_TWO + id + AllUrl.FOOD_THREE ;
                 intent.putExtra("urlChan",urlChan);
                 startActivity(intent);
@@ -144,10 +152,14 @@ public class LibraryFragment extends BaseFragment {
                 Intent intent = new Intent(getActivity(), TagsDetailsActivity.class);
                 kind = response.getGroup().get(1).getKind();
                 id = dataTags.get(i).getId() + "";
-
+                String name = dataTags.get(i).getName();
+                intent.putExtra("name",name);
                 String urlTags = AllUrl.FOOD_ONE + kind + AllUrl.FOOD_TWO + id + AllUrl.FOOD_THREE ;
                 Log.d("qwe", urlTags);
                 intent.putExtra("urlTags",urlTags);
+                intent.putExtra("kind",kind);
+                intent.putExtra("id",id);
+                intent.putExtra("pos",i);
 //                intent.putExtra("kind",kind);
 //                intent.putExtra("id",id);
                 startActivity(intent);
@@ -163,9 +175,14 @@ public class LibraryFragment extends BaseFragment {
                 Intent intent = new Intent(getActivity(), GroupDetailsActivity.class);
                 kind = response.getGroup().get(0).getKind();
                 id = data.get(i).getId() + "";
+                String name = data.get(i).getName();
+                int count = data.get(i).getSub_categories().size();
+                intent.putExtra("pos",i);
                 Log.d("xxx", id);
-//                intent.putExtra("kind",kind);
-//                intent.putExtra("id",id);
+                intent.putExtra("kind",kind);
+                intent.putExtra("id",id);
+                intent.putExtra("count",count);
+                intent.putExtra("name",name);
                 String urlGroup = AllUrl.FOOD_ONE + kind + AllUrl.FOOD_TWO + id + AllUrl.FOOD_THREE ;
                 intent.putExtra("urlGroup",urlGroup);
                 startActivity(intent);

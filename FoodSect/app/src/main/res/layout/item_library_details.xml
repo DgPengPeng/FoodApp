@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="0.5dp"
     android:orientation="vertical">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -11,19 +11,18 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_thumb_image_url"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="5dp"
+            android:layout_width="@dimen/item_library_details_width_thirty"
+            android:layout_height="@dimen/item_library_details_width_thirty"
+            android:layout_margin="@dimen/item_library_details_margin"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tv_name_egg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/iv_thumb_image_url"
-            android:text="11" />
+            android:layout_marginLeft="@dimen/item_library_details_margin_top_five"
+            android:layout_marginTop="@dimen/item_library_details_margin_top_five"
+            android:layout_toRightOf="@id/iv_thumb_image_url" />
 
 
         <TextView
@@ -31,34 +30,45 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_name_egg"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/iv_thumb_image_url"
-            android:text="11" />
+            android:layout_marginBottom="@dimen/item_library_details_margin_top_five"
+            android:layout_marginLeft="@dimen/item_library_details_margin_top_five"
+            android:layout_toRightOf="@id/iv_thumb_image_url" />
 
         <TextView
             android:id="@+id/tv_qianka"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_name_egg"
+            android:layout_marginBottom="@dimen/item_library_details_margin_top_five"
+            android:layout_marginLeft="@dimen/item_library_details_margin_top_five"
             android:layout_toRightOf="@id/tv_calory"
-            android:layout_marginLeft="5dp"
-            android:text="千卡/" />
+            android:text="@string/item_library_qianka" />
 
-         <TextView
-             android:id="@+id/tv_weight"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="22"
-             android:layout_marginLeft="5dp"
-             android:layout_toRightOf="@id/tv_qianka"
-             android:layout_below="@id/tv_name_egg"/>
+        <TextView
+            android:id="@+id/tv_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name_egg"
+            android:layout_marginBottom="@dimen/item_library_details_margin_top_five"
+            android:layout_marginLeft="@dimen/item_library_details_margin_top_five"
+            android:layout_toRightOf="@id/tv_qianka" />
+
         <TextView
             android:id="@+id/tv_ke"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="克"
-            android:layout_marginLeft="5dp"
+            android:layout_below="@id/tv_name_egg"
+            android:layout_marginBottom="@dimen/item_library_details_margin_top_five"
+            android:layout_marginLeft="@dimen/item_library_details_margin_top_five"
             android:layout_toRightOf="@id/tv_weight"
-            android:layout_below="@id/tv_name_egg"/>
+            android:text="@string/item_library_ke" />
+        <ImageView
+            android:id="@+id/iv_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/item_margin_right_ten"/>
     </RelativeLayout>
+    <include layout="@layout/item_line_details_library"/>
 </LinearLayout>

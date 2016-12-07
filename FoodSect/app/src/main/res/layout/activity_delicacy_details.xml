@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/library_layout_width_zero"
         android:layout_weight="1"
         android:orientation="horizontal"
         android:background="@color/gm">
@@ -21,14 +21,14 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/mq_ic_back"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/library_layout_margin_ten"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="资讯详情"
+            android:text="@string/deli_details_zixun"
             android:layout_marginRight="15dp"
             />
 
@@ -38,13 +38,13 @@
     <WebView
         android:id="@+id/delicacy_web"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/library_layout_width_zero"
         android:layout_weight="8" />
     <include layout="@layout/line_horizontal_long"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/library_layout_width_zero"
         android:layout_weight="1"
         android:background="@color/gm"
         android:orientation="horizontal">
@@ -52,7 +52,7 @@
 
         <LinearLayout
             android:id="@+id/del_share_ll"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/library_layout_width_zero"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center">
@@ -65,13 +65,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="分享"
+                android:text="@string/deli_details_fenxiang"
                 android:layout_gravity="center_vertical"/>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/del_collect_ll"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/library_layout_width_zero"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center">
@@ -84,7 +84,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="收藏"
+                android:text="@string/deli_details_shoucang"
                 android:layout_gravity="center_vertical"/>
 
         </LinearLayout>

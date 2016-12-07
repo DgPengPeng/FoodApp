@@ -7,7 +7,7 @@
     <LinearLayout
         android:id="@+id/ll_set_details"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/vp_shop_height_zero"
         android:layout_weight="0.8"
         android:background="@color/gm">
 
@@ -15,16 +15,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/my_set_details_ten"
             android:src="@mipmap/ic_back_dark_center" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="5dp"
-            android:text="设置"
-            android:textSize="20sp" />
+            android:layout_marginLeft="@dimen/my_set_details_five"
+            android:text="@string/my_set_details_set"
+            android:textSize="@dimen/my_set_details_text_size_twenty" />
 
     </LinearLayout>
 
@@ -47,9 +47,9 @@
                 android:layout_width="@dimen/my_width_zero"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="@dimen/my_set_details_fifteen"
                 android:layout_weight="8"
-                android:text="清除缓存" />
+                android:text="@string/my_set_dele" />
 
             <ImageView
                 android:layout_width="@dimen/my_width_zero"
@@ -78,9 +78,9 @@
                 android:layout_width="@dimen/my_width_zero"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="@dimen/my_set_margin_left_fifteen"
                 android:layout_weight="8"
-                android:text="给我们提个建议" />
+                android:text="@string/my_set_jianyi" />
 
             <ImageView
                 android:layout_width="@dimen/my_width_zero"
@@ -106,9 +106,9 @@
                 android:layout_width="@dimen/my_width_zero"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="@dimen/my_set_margin_left_fifteen"
                 android:layout_weight="8"
-                android:text="评个分吧" />
+                android:text="@string/my_set_pingfen" />
 
             <ImageView
                 android:layout_width="@dimen/my_width_zero"
@@ -135,9 +135,9 @@
                 android:layout_width="@dimen/my_width_zero"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="@dimen/my_set_margin_margin_left_fifteen"
                 android:layout_weight="8"
-                android:text="将食物派分享给朋友" />
+                android:text="@string/my_set_fenxiangfriend" />
 
             <ImageView
                 android:layout_width="@dimen/my_width_zero"
@@ -157,22 +157,22 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/main_height_zero"
         android:layout_weight="0.5">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/my_set_ten"
             android:gravity="center_horizontal"
-            android:text="食物派 版本号: V2.6"
+            android:text="@string/my_set_banben"
             android:textColor="@color/evaluate_small_color"
-            android:textSize="13sp" />
+            android:textSize="@dimen/my_set_thirteen" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/main_height_zero"
         android:layout_weight="5">
 
     </LinearLayout>

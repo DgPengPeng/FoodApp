@@ -7,7 +7,7 @@
     <LinearLayout
         android:id="@+id/my_details_ll"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/vp_shop_height_zero"
         android:layout_weight="0.8"
         android:background="@color/gm">
 
@@ -16,14 +16,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:src="@mipmap/ic_back_dark_center"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="@dimen/my_details_margin_left_ten"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="5dp"
-            android:text="登录"
-            android:textSize="20sp" />
+            android:layout_marginLeft="@dimen/my_details_five"
+            android:text="@string/my_details_denglu"
+            android:textSize="@dimen/my_details_text_size_twenty" />
 
     </LinearLayout>
 
@@ -31,7 +31,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/vp_shop_height_zero"
         android:layout_weight="9">
 
         <RelativeLayout
@@ -49,12 +49,12 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/ic_login_qq"
-                android:layout_margin="20dp"/>
+                android:layout_margin="@dimen/my_details_margin_left_twenty"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="QQ"
-                android:layout_marginLeft="20dp"
+                android:text="@string/my_details_qq"
+                android:layout_marginLeft="@dimen/my_details_margin_left_twenty"
                 android:layout_alignLeft="@id/iv_login_qq"
                 android:layout_below="@id/iv_login_qq"/>
 
@@ -64,13 +64,13 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/ic_login_wechat"
-                android:layout_margin="20dp"
+                android:layout_margin="@dimen/my_details_margin_left_twenty"
                 android:layout_toRightOf="@id/iv_login_qq"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="微信"
-                android:layout_marginLeft="20dp"
+                android:text="@string/my_details_weixin"
+                android:layout_marginLeft="@dimen/my_details_margin_left_twenty"
                 android:layout_alignLeft="@id/iv_login_wechat"
                 android:layout_below="@id/iv_login_wechat"/>
 
@@ -80,14 +80,14 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/ic_login_weibo"
-                android:layout_margin="20dp"
+                android:layout_margin="@dimen/my_details_margin_left_twenty"
                 android:layout_toRightOf="@id/iv_login_wechat"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="微信"
-                android:layout_marginLeft="20dp"
+                android:text="@string/my_details_weibo"
+                android:layout_marginLeft="@dimen/my_details_margin_left_twenty"
                 android:layout_alignLeft="@id/iv_login_weibo"
                 android:layout_below="@id/iv_login_wechat"/>
 
@@ -98,23 +98,23 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/ic_login_boohee"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/my_delicacy_margin_ten"
                 android:layout_toRightOf="@id/iv_login_weibo"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="薄荷"
-                android:layout_marginLeft="20dp"
+                android:text="@string/my_details_login_bohe"
+                android:layout_marginLeft="@dimen/my_details_margin_left_twenty"
                 android:layout_alignLeft="@id/iv__login_boohee"
                 android:layout_below="@id/iv_login_wechat"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="不用注册,用以下账号直接登录"
+                android:text="@string/my_details_text"
                 android:textColor="@color/evaluate_small_color"
                 android:layout_centerHorizontal="true"
-                android:textSize="15sp"
+                android:textSize="@dimen/my_details_text_size_fifteen"
                 android:layout_above="@id/iv_login_wechat"/>
 
             <!-- 最下面 的 图片-->

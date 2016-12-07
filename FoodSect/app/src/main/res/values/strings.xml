@@ -16,5 +16,30 @@
     <string name="tv_my_head_login">点击登录</string>
     <string name="tv_my_photo">我的照片</string>
     <string name="arrow_right_normal">上传食物数据</string>
+    <string name="deli_details_fenxiang">分享</string>
+    <string name="deli_details_shoucang">收藏</string>
+    <string name="deli_details_zixun">资讯详情</string>
+    <string name="details_group_zhushi">主食类</string>
+    <string name="details_group_changjian">常见</string>
+    <string name="details_tags_remen">热门品牌</string>
+    <string name="home_page_web_zixun">资讯详情</string>
+    <string name="knowledge_share">分享</string>
+    <string name="knowledge_shoucang">收藏</string>
+    <string name="knowledge_zixun">资讯详情</string>
+    <string name="details_group_all">全部</string>
+    <string name="my_details_text">不用注册,用以下账号直接登录</string>
+    <string name="my_details_login_bohe">薄荷</string>
+    <string name="my_details_weibo">微博</string>
+    <string name="my_details_weixin">微信</string>
+    <string name="my_details_qq">QQ</string>
+    <string name="my_details_denglu">登录</string>
+    <string name="my_set_details_set">设置</string>
+    <string name="my_set_dele">清除缓存</string>
+    <string name="my_set_jianyi">给我们提个建议</string>
+    <string name="my_set_pingfen">评个分吧</string>
+    <string name="my_set_fenxiangfriend">将食物派分享给朋友</string>
+    <string name="my_set_banben">食物派 版本号: V2.6</string>
+    <string name="item_library_qianka">千卡/</string>
+    <string name="item_library_ke">克</string>
 
 </resources>

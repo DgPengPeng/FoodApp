@@ -1,15 +1,28 @@
 package com.dong.foodsect.activity;
 
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.dong.foodsect.R;
 import com.dong.foodsect.Tools.AllUrl;
+import com.dong.foodsect.Tools.GroupPopClick;
 import com.dong.foodsect.adapter.LibraryDetailsAdapter;
+import com.dong.foodsect.adapter.TagsPopAdapter;
+import com.dong.foodsect.bean.GroupPopBean;
 import com.dong.foodsect.bean.LibraryDetailsBean;
 import com.dong.foodsect.volleydemo.NetHelper;
 import com.dong.foodsect.volleydemo.NetListener;
@@ -22,13 +35,24 @@ import java.util.List;
 /**
  * Created by dllo on 16/12/1.
  */
-public class ChainDetailsActivity extends BaseActivity implements View.OnClickListener {
+public class ChainDetailsActivity extends BaseActivity implements View.OnClickListener, GroupPopClick {
     private PullToRefreshListView pullToRefreshListView;
     private LibraryDetailsAdapter libraryDetailsAdapter;
     private List<LibraryDetailsBean.FoodsBean> data;
     private int i = 1;
 
     private ImageView backIv;
+    private TextView showTv;
+
+    private PopupWindow popupWindow;
+    private RecyclerView recyclerView;
+    private String url = AllUrl.NUTRIENT;
+    private RelativeLayout relativeLayout;
+    private TagsPopAdapter tagsPopAdapter;
+    private ImageView popIv;
+    private int pos;
+    private String id;
+    private String kind;
 
 
     @Override
@@ -40,16 +64,62 @@ public class ChainDetailsActivity extends BaseActivity implements View.OnClickLi
     void initView() {
         pullToRefreshListView = (PullToRefreshListView) findViewById(R.id.library_tags_listview);
         backIv = bindView(R.id.iv_tags_details_back);
+        relativeLayout = bindView(R.id.rl_tags);
+        showTv = bindView(R.id.tv_tags_top);
+        popIv = bindView(R.id.iv_tags_pop_down);
+        getPopClick();
         backIv.setOnClickListener(this);
         libraryDetailsAdapter = new LibraryDetailsAdapter(this);
         data = new ArrayList<>();
+        tagsPopAdapter = new TagsPopAdapter(this);
+    }
+
+    private void getPopClick() {
+        popIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //popupWindow.showAsDropDown(relativeLayout);
+                popupWindow.setAnimationStyle(R.style.popWindow_animation);
+                popupWindow.showAtLocation(relativeLayout, Gravity.TOP, 0, (int) getResources().getDimension(R.dimen.pop_height));
+            }
+        });
     }
 
     @Override
     void initData() {
         getNewGroupDetailsData();
-
+        initPop();
     }
+
+    public void initPop() {
+        final View view = LayoutInflater.from(this).inflate(R.layout.group_pop_recycleview, null);
+        recyclerView = (RecyclerView) view.findViewById(R.id.group_pop_recycleview);
+        popupWindow = new PopupWindow(this);
+        popupWindow.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+        popupWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        NetHelper.MyRequest(url, GroupPopBean.class, new NetListener<GroupPopBean>() {
+            @Override
+            public void successListener(GroupPopBean response) {
+                List<GroupPopBean.TypesBean> data = response.getTypes();
+                tagsPopAdapter.setData(data);
+                recyclerView.setAdapter(tagsPopAdapter);
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(ChainDetailsActivity.this, 3, LinearLayoutManager.VERTICAL, false);
+                recyclerView.setLayoutManager(gridLayoutManager);
+                popupWindow.setContentView(view);
+            }
+
+            @Override
+            public void errorListener(VolleyError error) {
+
+            }
+        });
+
+        popupWindow.setFocusable(true);
+        popupWindow.setBackgroundDrawable(new BitmapDrawable());
+
+        tagsPopAdapter.setGroupPopClick(this);
+    }
+
 
     private void getNewGroupDetailsData() {
         getGroupDetailsData(getUrl(1));
@@ -70,6 +140,33 @@ public class ChainDetailsActivity extends BaseActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         finish();
+    }
+
+    @Override
+    public void PopClick(String posPop) {
+        String url = AllUrl.FOOD_ONE + kind + AllUrl.FOOD_TWO + id + AllUrl.FOOD_NUTRITION +
+                posPop + AllUrl.FOOD_NUTRITION_CETER + pos + AllUrl.FOOD_NUTRITION_TAIL;
+        NetHelper.MyRequest(url, LibraryDetailsBean.class, new NetListener<LibraryDetailsBean>() {
+            @Override
+            public void successListener(LibraryDetailsBean response) {
+                libraryDetailsAdapter.getClear();
+                List<LibraryDetailsBean.FoodsBean> mid = response.getFoods();
+                if (data == null) {
+                    data = mid;
+                } else {
+                    for (int i = 0; i < mid.size(); i++) {
+                        data.add(mid.get(i));
+                    }
+                }
+
+                libraryDetailsAdapter.setData(data);
+            }
+
+            @Override
+            public void errorListener(VolleyError error) {
+
+            }
+        });
     }
 
     // 刷新
@@ -150,6 +247,11 @@ public class ChainDetailsActivity extends BaseActivity implements View.OnClickLi
     public String getUrl(int i) {
         Intent intent = getIntent();
         String ChanUrl = intent.getStringExtra("urlChan");
+        String name = intent.getStringExtra("name");
+        showTv.setText(name);
+        kind = intent.getStringExtra("kind");
+        id = intent.getStringExtra("id");
+        pos = intent.getIntExtra("pos", 0);
         String newChanUrl = ChanUrl + i + AllUrl.FOOD_FOUR;
         return newChanUrl;
     }

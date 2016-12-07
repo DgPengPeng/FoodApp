@@ -12,11 +12,12 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tv_tags_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
-            android:text="热门品牌"
+            android:text="@string/details_tags_remen"
             android:textColor="@color/gm_black" />
 
         <ImageView
@@ -24,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/details_tags_margin_left_ten"
             android:src="@mipmap/mq_ic_back" />
 
 
@@ -32,8 +33,9 @@
 
     <include layout="@layout/line_horizontal_long"/>
     <RelativeLayout
+        android:id="@+id/rl_tags"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/vp_shop_height_zero"
         android:layout_weight="0.7"
         android:background="@color/gm">
 
@@ -41,18 +43,19 @@
             android:id="@+id/tv_library_group_changjian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="常见"
+            android:text="@string/details_group_changjian"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_10"
            />
 
         <ImageView
+            android:id="@+id/iv_tags_pop_down"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_unit_arrow_down"
             android:layout_toRightOf="@id/tv_library_group_changjian"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="@dimen/details_group_mragin_left"/>
 
     </RelativeLayout>
 
@@ -64,10 +67,14 @@
 
 
     <!--</ListView>-->
+
+    <include layout="@layout/line_horizontal_long"/>
     <com.handmark.pulltorefresh.library.PullToRefreshListView
         xmlns:ptr="http://schemas.android.com/apk/res-auto"
         android:id="@+id/library_tags_listview"
+        android:background="@color/gm"
         android:layout_width="match_parent"
+        android:divider="@null"
         android:layout_height="0dp"
         android:layout_weight="8.5"
         android:fadingEdge="none"
