@@ -86,15 +86,15 @@ public class GroupDetailsActivity extends BaseActivity implements View.OnClickLi
         pullToRefreshListView = (PullToRefreshListView) findViewById(R.id.library_group_listview);
         backI = bindView(R.id.iv_group_details_back);
         //downIv = bindView(R.id.iv_group_pop_down);
-        //upDownIv = bindView(R.id.iv_library_group);
-        relativeLayoutPop = bindView(R.id.rl__library_group);
+        upDownIv = bindView(R.id.iv_library_group);
+        //relativeLayoutPop = bindView(R.id.rl__library_group);
         relativeLayoutPopRv = bindView(R.id.details_group_rel);
         showTv = bindView(R.id.tv_group_top);
         relativeLayout = bindView(R.id.details_group_rel);
         mRelativeLayout = bindView(R.id.first_pop_down_rl);
         //downIv.setOnClickListener(this);
-        //upDownIv.setOnClickListener(this);
-        relativeLayoutPop.setOnClickListener(this);
+        upDownIv.setOnClickListener(this);
+        //relativeLayoutPop.setOnClickListener(this);
         relativeLayoutPopRv.setOnClickListener(this);
         backI.setOnClickListener(this);
         groupPopAdapter = new GroupPopAdapter(this);
@@ -130,7 +130,7 @@ public class GroupDetailsActivity extends BaseActivity implements View.OnClickLi
             }
         });
 
-       // popupWindow.setFocusable(true);
+        popupWindow.setFocusable(true);
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
         popupWindow.setOutsideTouchable(true);
         // 点击外面让popup消失
@@ -216,7 +216,7 @@ public class GroupDetailsActivity extends BaseActivity implements View.OnClickLi
                 popupWindow.showAtLocation(relativeLayout, Gravity.TOP, 0, (int) getResources().getDimension(R.dimen.pop_height));
                 break;
             // 上面的pop
-            case R.id.rl__library_group:
+            case R.id.iv_library_group:
                 if (!popupWindowUp.isShowing()) {
                     popupWindowUp.showAsDropDown(mRelativeLayout, 625, 0);
                 } else {

@@ -24,11 +24,12 @@
         </activity>
         <activity android:name=".activity.DelicacyDetailsActivity" />
         <activity android:name=".activity.KnowledgeDetailsActivity" />
-        <activity android:name=".activity.HomePageDetailsActivity"/>
-        <activity android:name=".activity.HomeDetailsWebViewActivity"/>
-        <activity android:name=".activity.GroupDetailsActivity"/>
-        <activity android:name=".activity.TagsDetailsActivity"/>
-        <activity android:name=".activity.ChainDetailsActivity"/>
+        <activity android:name=".activity.HomePageDetailsActivity" />
+        <activity android:name=".activity.HomeDetailsWebViewActivity" />
+        <activity android:name=".activity.GroupDetailsActivity" />
+        <activity android:name=".activity.TagsDetailsActivity" />
+        <activity android:name=".activity.ChainDetailsActivity" />
+        <activity android:name=".activity.SearchDetailsActivity"></activity>
     </application>
 
 </manifest>

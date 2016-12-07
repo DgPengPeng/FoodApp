@@ -48,6 +48,8 @@ public class AllUrl {
     // 营养素
     public static final String NUTRIENT = "http://food.boohee.com/fb/v1/foods/sort_types";
 
+    // 搜索详情页 Rv 接口
+    public static final String SEARCH = "http://food.boohee.com/fb/v1/keywords?token=6CnGjxv1F6JsbAgBH8mD";
 
 
     // http://food.boohee.com/fb/v1/foods?kind=brand&value=0(&sub_value=13)&order_by=1&page=1&order_asc=0

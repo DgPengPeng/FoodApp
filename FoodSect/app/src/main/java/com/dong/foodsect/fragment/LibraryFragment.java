@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 
 import com.android.volley.RequestQueue;
@@ -15,6 +16,7 @@ import com.android.volley.toolbox.Volley;
 import com.dong.foodsect.R;
 import com.dong.foodsect.activity.ChainDetailsActivity;
 import com.dong.foodsect.activity.GroupDetailsActivity;
+import com.dong.foodsect.activity.SearchDetailsActivity;
 import com.dong.foodsect.activity.TagsDetailsActivity;
 import com.dong.foodsect.adapter.LibraryAdapter;
 import com.dong.foodsect.adapter.LibraryChanAdapter;
@@ -31,7 +33,7 @@ import java.util.List;
  * Created by dllo on 16/11/22.
  * 这是 食物百科  Fragment
  */
-public class LibraryFragment extends BaseFragment {
+public class LibraryFragment extends BaseFragment implements View.OnClickListener {
 
     //    private LibraryAdapter libraryAdapter;
     private GridView foodGv, tagsGv, chainGv;
@@ -48,6 +50,8 @@ public class LibraryFragment extends BaseFragment {
     private String id;
     private String kind1;
     private String id1;
+
+    private Button btnSearch;
 
     // 可以传值,相当 fragment 复用
     public static LibraryFragment newInstance() {
@@ -69,7 +73,8 @@ public class LibraryFragment extends BaseFragment {
         foodGv = (GridView) view.findViewById(R.id.library_food_sort);
         tagsGv = (GridView) view.findViewById(R.id.library_tags_brand);
         chainGv = (GridView) view.findViewById(R.id.library_chain_drink);
-
+        btnSearch = bindView(R.id.library_btn_search);
+        btnSearch.setOnClickListener(this);
 
 
     }
@@ -191,4 +196,10 @@ public class LibraryFragment extends BaseFragment {
     }
 
 
+    // 搜索 跳转到详情页
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(mcontext, SearchDetailsActivity.class);
+        startActivity(intent);
+    }
 }

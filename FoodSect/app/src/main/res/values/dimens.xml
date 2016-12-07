@@ -115,8 +115,8 @@
     <dimen name="item_library_details_margin">5dp</dimen>
     <dimen name="item_library_details_margin_top_five">5dp</dimen>
     <dimen name="line_horizontal_marginleft_fifty">50dp</dimen>
-    
-    
+
+
     <dimen name="pop_height">100dp</dimen>
     <dimen name="pop_height_up">270dp</dimen>
     <dimen name="pop_tv_margin_five">5dp</dimen>
