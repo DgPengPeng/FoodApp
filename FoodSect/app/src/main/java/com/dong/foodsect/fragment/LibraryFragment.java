@@ -8,11 +8,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.dong.foodsect.R;
 import com.dong.foodsect.activity.ChainDetailsActivity;
 import com.dong.foodsect.activity.GroupDetailsActivity;
@@ -22,10 +18,9 @@ import com.dong.foodsect.adapter.LibraryAdapter;
 import com.dong.foodsect.adapter.LibraryChanAdapter;
 import com.dong.foodsect.adapter.LibraryTagsAdapter;
 import com.dong.foodsect.bean.LibraryBean;
-import com.dong.foodsect.Tools.AllUrl;
+import com.dong.foodsect.tools.AllUrl;
 import com.dong.foodsect.volleydemo.NetHelper;
 import com.dong.foodsect.volleydemo.NetListener;
-import com.google.gson.Gson;
 
 import java.util.List;
 

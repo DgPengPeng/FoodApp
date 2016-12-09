@@ -1,4 +1,4 @@
-package com.dong.foodsect.Tools;
+package com.dong.foodsect.tools;
 
 /**
  * Created by dllo on 16/12/6.

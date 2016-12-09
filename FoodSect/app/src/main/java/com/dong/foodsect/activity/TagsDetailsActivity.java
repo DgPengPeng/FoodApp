@@ -18,8 +18,8 @@ import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.dong.foodsect.R;
-import com.dong.foodsect.Tools.AllUrl;
-import com.dong.foodsect.Tools.GroupPopClick;
+import com.dong.foodsect.tools.AllUrl;
+import com.dong.foodsect.tools.GroupPopClick;
 import com.dong.foodsect.adapter.LibraryDetailsAdapter;
 import com.dong.foodsect.adapter.TagsPopAdapter;
 import com.dong.foodsect.bean.GroupPopBean;

@@ -7,6 +7,8 @@ import android.widget.ImageView;
 
 import com.dong.foodsect.R;
 
+import cn.sharesdk.framework.ShareSDK;
+
 /**
  * Created by dllo on 16/11/25.
  *
@@ -25,6 +27,8 @@ public class WelcomeActivity extends BaseActivity implements View.OnClickListene
     void initView() {
         welcomeIv = (ImageView) findViewById(R.id.iv_welcome);
         welcomeIv.setOnClickListener(this);
+        // 三方 分享
+        ShareSDK.initSDK(this);
 
     }
 

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/gm">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_search_details_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/ic_back_dark_center" />
+
+            <EditText
+                android:id="@+id/et_search_show"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:background="@null"
+
+                />
+            <ImageView
+                android:id="@+id/iv_gv_search_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="35dp"
+                android:src="@mipmap/ic_clear" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/ic_search" />
+        </RelativeLayout>
+    </LinearLayout>
+<include layout="@layout/line_horizontal_long"/>
+    <RelativeLayout
+        android:id="@+id/details_group_rel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vp_shop_height_zero"
+        android:layout_weight="0.7"
+        android:background="@color/gm">
+
+        <TextView
+            android:id="@+id/tv_library_group_changjian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/details_group_changjian" />
+
+        <ImageView
+            android:id="@+id/iv_group_pop_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/details_group_mragin_left"
+            android:layout_toRightOf="@id/tv_library_group_changjian"
+            android:src="@mipmap/ic_unit_arrow_down" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8.3">
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            xmlns:ptr="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/gv_search_listview"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:fastScrollEnabled="false"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:smoothScrollbar="true"
+            ptr:ptrMode="both">
+
+        </com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+
+    </LinearLayout>
+
+</LinearLayout>

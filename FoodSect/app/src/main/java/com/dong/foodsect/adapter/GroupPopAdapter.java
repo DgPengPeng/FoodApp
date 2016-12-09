@@ -8,10 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dong.foodsect.R;
-import com.dong.foodsect.Tools.GroupPopClick;
+import com.dong.foodsect.tools.GroupPopClick;
 import com.dong.foodsect.bean.GroupPopBean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

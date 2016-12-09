@@ -1,4 +1,4 @@
-package com.dong.foodsect.Tools;
+package com.dong.foodsect.tools;
 
 /**
  * Created by dllo on 16/11/24.
@@ -50,6 +50,10 @@ public class AllUrl {
 
     // 搜索详情页 Rv 接口
     public static final String SEARCH = "http://food.boohee.com/fb/v1/keywords?token=6CnGjxv1F6JsbAgBH8mD";
+
+    // 搜索 点击跳转详情页 接口拼接
+    public static final String SEARCH_HEAD = "http://food.boohee.com/fb/v1/search?page=";
+    public static final String SEARCH_MID = "&order_asc=desc&q=";
 
 
     // http://food.boohee.com/fb/v1/foods?kind=brand&value=0(&sub_value=13)&order_by=1&page=1&order_asc=0

@@ -11,7 +11,7 @@ import com.dong.foodsect.R;
 import com.dong.foodsect.activity.KnowledgeDetailsActivity;
 import com.dong.foodsect.adapter.KnowledgeAdapter;
 import com.dong.foodsect.bean.KnowleageBean;
-import com.dong.foodsect.Tools.AllUrl;
+import com.dong.foodsect.tools.AllUrl;
 import com.dong.foodsect.volleydemo.NetHelper;
 import com.dong.foodsect.volleydemo.NetListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;

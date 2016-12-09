@@ -6,12 +6,12 @@ import android.view.View;
 
 import com.android.volley.VolleyError;
 import com.dong.foodsect.R;
-import com.dong.foodsect.Tools.HomePageClick;
+import com.dong.foodsect.tools.HomePageClick;
 import com.dong.foodsect.activity.HomeDetailsWebViewActivity;
 import com.dong.foodsect.activity.HomePageDetailsActivity;
 import com.dong.foodsect.adapter.HomePageAdapter;
 import com.dong.foodsect.bean.HomePageBean;
-import com.dong.foodsect.Tools.AllUrl;
+import com.dong.foodsect.tools.AllUrl;
 import com.dong.foodsect.volleydemo.NetHelper;
 import com.dong.foodsect.volleydemo.NetListener;
 import com.github.jdsjlzx.interfaces.OnLoadMoreListener;

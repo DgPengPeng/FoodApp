@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context="com.dong.foodsect.activity.SearchDetailsActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -18,122 +17,129 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/iv_search_details_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:src="@mipmap/ic_back_dark_center" />
-            <EditText
-                style="?android:attr/textViewStyle"
+            <!--<com.dong.foodsect.Tools.ClearEditText-->
+            <!--style="?android:attr/textViewStyle"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="请输入食物名称"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:background="@null"-->
+            <!--/>-->
+            <com.dong.foodsect.tools.ClearEditText
+                android:id="@+id/et_lib_search_aty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="请输入食物名称"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="30dp"
+                android:drawableRight="@mipmap/ic_clear"
+                android:layout_marginRight="35dp"
+                android:focusable="true"
                 android:background="@null"
+                android:focusableInTouchMode="true"
+                android:hint="请输入食物名称"
+                android:singleLine="true"
                 />
 
             <ImageView
+                android:id="@+id/iv_lib_search_sea_aty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"
                 android:src="@mipmap/ic_search" />
         </RelativeLayout>
     </LinearLayout>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        >
+        android:layout_weight="9">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:text="最近搜索" />
-
-    </LinearLayout>
-
-
-    <ListView
-        android:id="@+id/search_details_ls"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.5"
-        android:background="@color/gm">
-
-    </ListView>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:background="@color/gm">
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_search_qingkong"
-                android:layout_width="wrap_content"
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dp"-->
+                <!--&gt;-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:text="最近搜索" />-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="2.5"-->
+            <!--&gt;-->
+            <com.dong.foodsect.tools.NoScrollListView
+                android:id="@+id/search_details_ls"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="5dp"
-                android:text="清空历史记录" />
+                android:background="@color/gm"
+                >
+            </com.dong.foodsect.tools.NoScrollListView>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/tv_search_qingkong"
-                android:src="@mipmap/ic_trash" />
-        </RelativeLayout>
-    </LinearLayout>
-    <include layout="@layout/line_horizontal_long"/>
+            <!--</LinearLayout>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+            <include layout="@layout/line_horizontal_long"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:text="大家都在搜" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                >
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="大家都在搜" />
 
-    <include layout="@layout/line_horizontal_long"/>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5"
-        >
+            <include layout="@layout/line_horizontal_long"/>
 
-        <GridView
-            android:id="@+id/search_details_gv"
-            android:layout_width="match_parent"
-            android:layout_height="147dp"
-            android:numColumns="2"
-            android:background="#999999"
-            android:verticalSpacing="0.5dp"
-            />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2">
+                <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/search_details_rv"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"/>-->
+                <GridView
+                    android:id="@+id/search_details_gv"
+                    android:layout_width="match_parent"
+                    android:layout_height="217dp"
+                    android:numColumns="2"
+                    android:background="#999999"
+                    android:verticalSpacing="0.5dp"
+                    />
+            </LinearLayout>
 
-    </LinearLayout>
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="2">-->
 
-
+            <!--</LinearLayout>-->
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -2,7 +2,6 @@ package com.dong.foodsect.activity;
 
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -22,8 +20,8 @@ import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.dong.foodsect.R;
-import com.dong.foodsect.Tools.AllUrl;
-import com.dong.foodsect.Tools.GroupPopClick;
+import com.dong.foodsect.tools.AllUrl;
+import com.dong.foodsect.tools.GroupPopClick;
 import com.dong.foodsect.adapter.GroupPopAdapter;
 import com.dong.foodsect.adapter.GroupPopListViewAdapter;
 import com.dong.foodsect.adapter.LibraryDetailsAdapter;

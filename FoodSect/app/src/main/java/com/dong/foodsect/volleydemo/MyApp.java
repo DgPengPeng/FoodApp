@@ -12,7 +12,8 @@ import android.content.Context;
  */
 public class MyApp extends Application {
     private static Context mContext;
-
+    private static DaoMaster daoMaster;
+    private static DaoSession daoSession;
 
     @Override
     public void onCreate() {
@@ -26,4 +27,23 @@ public class MyApp extends Application {
         return mContext;
     }
 
+    // 对外提供获取DaoMaster 对象
+    public static DaoMaster getDaoMaster(){
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(getmContext(),"RecentSearch.db",null);
+        // 初始化DaoMaster 对象
+        daoMaster = new DaoMaster(helper.getWritableDatabase());
+        return daoMaster;
+
+    }
+    // 对外提供获取DaoSession对象
+    public static DaoSession getDaoSession() {
+        if (daoSession == null){
+            if (daoMaster == null){
+                daoMaster = getDaoMaster();
+            }
+            // 初始化DapSession对象
+            daoSession = daoMaster.newSession();
+        }
+        return daoSession;
+    }
 }

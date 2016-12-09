@@ -1,6 +1,4 @@
-package com.dong.foodsect.Tools;
-
-import com.dong.foodsect.bean.HomePageBean;
+package com.dong.foodsect.tools;
 
 /**
  * Created by dllo on 16/11/29.

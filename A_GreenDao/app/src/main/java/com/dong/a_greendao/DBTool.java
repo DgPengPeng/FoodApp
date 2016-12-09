@@ -60,7 +60,8 @@ public class DBTool {
 
     // 根据某一字段进行删除操作
     public void deleteByName(String name) {
-        DeleteQuery<Person> deleteQuery = personDao.queryBuilder().where(PersonDao.Properties.Name.eq(name)).buildDelete();
+        DeleteQuery<Person> deleteQuery = personDao.queryBuilder()
+                .where(PersonDao.Properties.Name.eq(name)).buildDelete();
         deleteQuery.executeDeleteWithoutDetachingEntities();
 
     }

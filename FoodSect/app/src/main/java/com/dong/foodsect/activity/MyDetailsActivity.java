@@ -11,7 +11,7 @@ import com.dong.foodsect.fragment.MyFragment;
  * Created by dllo on 16/11/25.
  *
  * 这是我的_登录详情页
- */
+ */ 
 public class MyDetailsActivity extends BaseActivity implements View.OnClickListener {
 
     private LinearLayout linearLayout;

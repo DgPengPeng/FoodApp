@@ -12,7 +12,7 @@ import com.dong.foodsect.R;
 import com.dong.foodsect.activity.DelicacyDetailsActivity;
 import com.dong.foodsect.adapter.DelicacyAdapter;
 import com.dong.foodsect.bean.DelicacyBean;
-import com.dong.foodsect.Tools.AllUrl;
+import com.dong.foodsect.tools.AllUrl;
 import com.dong.foodsect.volleydemo.NetHelper;
 import com.dong.foodsect.volleydemo.NetListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;

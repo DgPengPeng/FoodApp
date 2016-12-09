@@ -11,7 +11,7 @@ import com.dong.foodsect.R;
 import com.dong.foodsect.activity.EvaluationDetailsActivity;
 import com.dong.foodsect.adapter.EvaluationAdapter;
 import com.dong.foodsect.bean.EvaluationBean;
-import com.dong.foodsect.Tools.AllUrl;
+import com.dong.foodsect.tools.AllUrl;
 import com.dong.foodsect.volleydemo.NetHelper;
 import com.dong.foodsect.volleydemo.NetListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -106,6 +106,8 @@ public class EvaluationFragment extends BaseFragment {
                     }
                 }
                 evaluationAdapter.setData(data);
+
+                // 行点击事件
                 pullToRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

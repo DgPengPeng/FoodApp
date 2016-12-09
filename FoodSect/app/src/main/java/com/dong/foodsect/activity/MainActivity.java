@@ -78,6 +78,8 @@ public class MainActivity extends BaseActivity {
             mainGroup.check(R.id.rb_main_my);
         }else if (id== 2){
             mainGroup.check(R.id.rb_main_my);
+        }else if (id == 3){
+            mainGroup.check(R.id.rb_main_library);
         }
     }
 }

@@ -5,12 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dong.foodsect.R;
-import com.dong.foodsect.Tools.HomePageClick;
+import com.dong.foodsect.tools.HomePageClick;
 import com.dong.foodsect.bean.HomePageBean;
 import com.squareup.picasso.Picasso;
 
