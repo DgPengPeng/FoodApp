@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/main_height_zero"
         android:layout_weight="0.8"
         android:background="@color/gm">
 
@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/library_gridview_margin_ten"
                 android:src="@mipmap/mq_ic_back" />
 
             <TextView
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="@dimen/library_gridview_margin_ten"
                 android:gravity="right"
                 android:src="@mipmap/ic_share_dark" />
 
@@ -50,8 +50,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="@dimen/main_height_zero"
+        android:layout_marginTop="@dimen/library_btn_paddingLeft_five"
         android:layout_weight="8"
         android:background="@color/gm">
 
@@ -61,17 +61,17 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/home_page_ava"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp" />
+                android:layout_width="@dimen/home_page_ava_forty"
+                android:layout_height="@dimen/home_page_ava_forty"
+                android:layout_marginLeft="@dimen/library_gridview_margin_ten"
+                android:layout_marginTop="@dimen/library_btn_paddingLeft_five" />
 
             <TextView
                 android:id="@+id/home_page_publisher"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:layout_marginTop="5dp"
+                android:paddingLeft="@dimen/library_btn_paddingLeft_five"
+                android:layout_marginTop="@dimen/library_btn_paddingLeft_five"
                 android:layout_toRightOf="@id/home_page_ava"
                 />
 
@@ -79,16 +79,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/home_page_publisher"
-                android:paddingLeft="5dp"
+                android:paddingLeft="@dimen/library_btn_paddingLeft_five"
                 android:layout_toRightOf="@id/home_page_ava"
-                android:text="long,long,ago..." />
+                android:text="@string/long_long_ago" />
 
             <ImageView
                 android:id="@+id/home_page_card_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/home_page_ava"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/library_btn_paddingLeft_five"
                 android:scaleType="fitXY"
                 />
 

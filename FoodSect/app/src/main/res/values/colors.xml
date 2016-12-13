@@ -10,5 +10,6 @@
     <color name="gm">#fff</color>
     <color name="gm_black">#000</color>
     <color name="evaluate_small_color">#CACACA</color>
+    <color name="item_search_ls_head">#EEEEEE</color>
 
 </resources>

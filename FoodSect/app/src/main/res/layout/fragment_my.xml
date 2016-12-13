@@ -39,8 +39,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/civ_my_avatar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_below="@id/tv_my_head"
             app:civ_border_color="@color/gm"
             app:civ_border_width="2dp"
@@ -133,7 +133,7 @@
                 android:layout_weight="8"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="我的收藏" />
+                android:text="@string/my_collect" />
 
             <ImageView
                 android:layout_width="@dimen/my_width_zero"
@@ -206,7 +206,7 @@
                 android:layout_weight="8"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="我的订单" />
+                android:text="@string/my_order" />
 
             <ImageView
                 android:layout_width="@dimen/my_width_zero"

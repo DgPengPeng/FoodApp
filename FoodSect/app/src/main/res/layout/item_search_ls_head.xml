@@ -7,16 +7,16 @@
     <include layout="@layout/line_horizontal_long"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#EEEEEE"
+        android:layout_height="@dimen/item_search_ls_head_height"
+        android:background="@color/item_search_ls_head"
         >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:text="最近搜索" />
+            android:layout_marginLeft="@dimen/item_search_ls_head_margin_left_ten"
+            android:text="@string/item_search_ls_head" />
 
     </LinearLayout>
 

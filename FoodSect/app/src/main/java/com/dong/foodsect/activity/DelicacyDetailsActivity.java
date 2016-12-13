@@ -10,24 +10,42 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.dong.foodsect.R;
+import com.dong.foodsect.volleydemo.CollectBean;
+import com.dong.foodsect.volleydemo.DBTool;
+
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class DelicacyDetailsActivity extends BaseActivity implements View.OnClickListener {
 
 
+
+    private String link;
+    private String title;
+
     private WebView webView;
-    private ImageView backIv;
+    private ImageView backIv,heartIv;
+    private LinearLayout linearLayout, sharell;
+    private int i;
 
     @Override
     int setLayout() {
-        return R.layout.activity_delicacy_details;
+        return R.layout.activity_evaluation_details;
     }
 
     @Override
     void initView() {
-        webView = (WebView) findViewById(R.id.delicacy_web);
-        backIv = (ImageView) findViewById(R.id.del_back);
+
+        webView = (WebView) findViewById(R.id.evaluation_web);
+        backIv = (ImageView) findViewById(R.id.eva_back);
+        linearLayout = (LinearLayout) findViewById(R.id.collect_ll);
+        sharell = (LinearLayout) findViewById(R.id.eva_share_ll);
+        heartIv = bindView(R.id.iv_news_keep_defaultiv);
+        sharell.setOnClickListener(this);
+        linearLayout.setOnClickListener(this);
         backIv.setOnClickListener(this);
     }
 
@@ -35,11 +53,50 @@ public class DelicacyDetailsActivity extends BaseActivity implements View.OnClic
     void initData() {
         getWebViewData();
 
+
+        if (!DBTool.getInstance().isUrlSave(link)) {
+            i = 1;
+            heartIv.setSelected(false);
+        } else {
+            i = 2;
+            heartIv.setSelected(true);
+        }
+    }
+
+
+    // 第三方分享
+
+    private void showShare() {
+        ShareSDK.initSDK(this);
+        OnekeyShare oks = new OnekeyShare();
+//关闭sso授权
+        oks.disableSSOWhenAuthorize();
+
+// title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间等使用
+        oks.setTitle("标题");
+// titleUrl是标题的网络链接，QQ和QQ空间等使用
+        oks.setTitleUrl("http://sharesdk.cn");
+// text是分享文本，所有平台都需要这个字段
+        oks.setText("我是分享文本");
+// imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+//oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
+// url仅在微信（包括好友和朋友圈）中使用
+        oks.setUrl("http://sharesdk.cn");
+// comment是我对这条分享的评论，仅在人人网和QQ空间使用
+        oks.setComment("我是测试评论文本");
+// site是分享此内容的网站名称，仅在QQ空间使用
+        oks.setSite(getString(R.string.app_name));
+// siteUrl是分享此内容的网站地址，仅在QQ空间使用
+        oks.setSiteUrl("http://sharesdk.cn");
+
+// 启动分享GUI
+        oks.show(this);
     }
 
     private void getWebViewData() {
         Intent intent = getIntent();
-        String link = intent.getStringExtra("url");
+        link = intent.getStringExtra("url");
+        title = intent.getStringExtra("title");
         Log.d("sss", link);
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -84,6 +141,29 @@ public class DelicacyDetailsActivity extends BaseActivity implements View.OnClic
 
     @Override
     public void onClick(View view) {
-        finish();
+        switch (view.getId()) {
+
+            case R.id.eva_back:
+                finish();
+                break;
+            case R.id.collect_ll:
+                if (i % 2 != 0) {
+                    // 没存 要存 单数
+                    heartIv.setSelected(true);
+                    CollectBean collectBean = new CollectBean(null, link,title);
+                    DBTool.getInstance().insertUrl(collectBean);
+                    i = i + 1;
+                } else {
+                    // 存过 要删 双数
+                    heartIv.setSelected(false);
+                    i = i + 1;
+                    DBTool.getInstance().deleteUrlBy(link);
+                }
+                break;
+            case R.id.eva_share_ll:
+                showShare();
+                break;
+        }
+
     }
 }

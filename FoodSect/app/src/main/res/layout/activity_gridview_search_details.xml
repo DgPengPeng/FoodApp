@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/main_height_zero"
         android:layout_weight="1"
         android:background="@color/gm">
 
@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/library_layout_margin_ten"
                 android:src="@mipmap/ic_back_dark_center" />
 
             <EditText
@@ -28,8 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="35dp"
-                android:layout_marginRight="35dp"
+                android:layout_marginLeft="@dimen/aty_gv_sea_det_sanshiwu"
+                android:layout_marginRight="@dimen/aty_gv_sea_det_sanshiwu"
                 android:background="@null"
 
                 />
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="35dp"
+                android:layout_marginRight="@dimen/aty_gv_sea_det_sanshiwu"
                 android:src="@mipmap/ic_clear" />
 
             <ImageView
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/aty_gv_sea_det_five"
                 android:src="@mipmap/ic_search" />
         </RelativeLayout>
     </LinearLayout>
@@ -81,14 +81,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/main_height_zero"
         android:layout_weight="8.3">
 
         <com.handmark.pulltorefresh.library.PullToRefreshListView
             xmlns:ptr="http://schemas.android.com/apk/res-auto"
             android:id="@+id/gv_search_listview"
             android:layout_width="match_parent"
-
             android:layout_height="match_parent"
             android:divider="@null"
             android:fadingEdge="none"

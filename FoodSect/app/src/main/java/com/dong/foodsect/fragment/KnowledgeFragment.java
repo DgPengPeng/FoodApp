@@ -145,7 +145,10 @@ public class KnowledgeFragment extends BaseFragment {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Intent intent = new Intent(getContext(), KnowledgeDetailsActivity.class);
                         String url = data.get(i - 1).getLink();
+                        String title = data.get(i -1).getTitle();
                         intent.putExtra("url", url);
+                        intent.putExtra("title",title);
+
                         startActivity(intent);
                     }
                 });

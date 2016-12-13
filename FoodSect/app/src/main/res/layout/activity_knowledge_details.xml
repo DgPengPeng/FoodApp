@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/main_height_zero"
         android:layout_weight="1"
         android:orientation="horizontal"
         android:background="@color/gm">
@@ -80,7 +80,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_news_keep_default"
+                android:background="@drawable/checked_collect_img"
                 android:layout_gravity="center_vertical"/>
             <TextView
                 android:layout_width="wrap_content"

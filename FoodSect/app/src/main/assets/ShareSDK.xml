@@ -60,9 +60,9 @@
     <SinaWeibo
         Id="1"
         SortId="1"
-        AppKey="568898243"
-        AppSecret="38a4f8204cc784f81f9f0daaf31e02e3"
-        RedirectUrl="http://www.sharesdk.cn"
+        AppKey="993814666"
+        AppSecret="73bd1203c0e3069c860a0967fcaf71d3"
+        RedirectUrl="http://www.baidu.com"
         ShareByAppClient="true"
         Enable="true" />
 

@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/main_height_zero"
         android:layout_weight="1"
         android:orientation="horizontal"
         android:background="@color/gm">
@@ -18,14 +18,14 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/mq_ic_back"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/item_margin_right_ten"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="资讯详情"
+            android:text="@string/activity_eva_det_News"
             android:layout_marginRight="15dp"
             />
 
@@ -35,13 +35,13 @@
     <WebView
         android:id="@+id/evaluation_web"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/main_height_zero"
         android:layout_weight="8" />
     <include layout="@layout/line_horizontal_long"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/main_height_zero"
         android:layout_weight="1"
         android:background="@color/gm"
         android:orientation="horizontal">
@@ -49,7 +49,7 @@
 
         <LinearLayout
             android:id="@+id/eva_share_ll"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/main_height_zero"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center">
@@ -62,27 +62,29 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="分享"
+            android:text="@string/activity_eva_det_share"
             android:layout_gravity="center_vertical"/>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/collect_ll"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/main_height_zero"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center">
 
         <ImageView
+            android:id="@+id/iv_news_keep_defaultiv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_news_keep_default"
+            android:src="@drawable/checked_collect_img"
             android:layout_gravity="center_vertical"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="收藏"
-            android:layout_gravity="center_vertical"/>
+            android:text="@string/activity_eva_det_keep"
+            android:layout_gravity="center_vertical"
+            />
 
         </LinearLayout>
 

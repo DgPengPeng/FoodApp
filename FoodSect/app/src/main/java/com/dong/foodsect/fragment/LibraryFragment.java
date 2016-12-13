@@ -78,9 +78,6 @@ public class LibraryFragment extends BaseFragment implements View.OnClickListene
     void initData() {
         getGirdViewLis();
 
-
-
-
     }
 
 

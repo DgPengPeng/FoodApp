@@ -5,13 +5,14 @@
     android:layout_height="wrap_content"
     android:background="@color/gm">
 
+    <!-- 搜索 详情页 gridview 行布局-->
     <TextView
         android:id="@+id/tv_item_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:textSize="20sp"
-        android:padding="8dp"
+        android:layout_marginLeft="@dimen/item_search_margin_left_ten"
+        android:textSize="@dimen/tv_item_search__size_twenty"
+        android:padding="@dimen/tv_item_search_padding_eight"
         />
 
 </LinearLayout>

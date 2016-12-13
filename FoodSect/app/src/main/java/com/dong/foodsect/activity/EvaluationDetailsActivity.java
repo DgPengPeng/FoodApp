@@ -23,9 +23,11 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
  */
 public class EvaluationDetailsActivity extends BaseActivity implements View.OnClickListener {
     private WebView webView;
-    private ImageView backIv;
+    private ImageView backIv,heartIv;
     private LinearLayout linearLayout, sharell;
     private String link;
+    private String title;
+    private int i;
 
     @Override
     int setLayout() {
@@ -38,6 +40,7 @@ public class EvaluationDetailsActivity extends BaseActivity implements View.OnCl
         backIv = (ImageView) findViewById(R.id.eva_back);
         linearLayout = (LinearLayout) findViewById(R.id.collect_ll);
         sharell = (LinearLayout) findViewById(R.id.eva_share_ll);
+        heartIv = bindView(R.id.iv_news_keep_defaultiv);
         sharell.setOnClickListener(this);
         linearLayout.setOnClickListener(this);
         backIv.setOnClickListener(this);
@@ -46,6 +49,14 @@ public class EvaluationDetailsActivity extends BaseActivity implements View.OnCl
     @Override
     void initData() {
         getWebViewData();
+
+        if (!DBTool.getInstance().isUrlSave(link)) {
+            i = 1;
+            heartIv.setSelected(false);
+        } else {
+            i = 2;
+            heartIv.setSelected(true);
+        }
 
     }
 
@@ -80,6 +91,7 @@ public class EvaluationDetailsActivity extends BaseActivity implements View.OnCl
     private void getWebViewData() {
         Intent intent = getIntent();
         link = intent.getStringExtra("url");
+        title = intent.getStringExtra("title");
         Log.d("sss", link);
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -123,6 +135,8 @@ public class EvaluationDetailsActivity extends BaseActivity implements View.OnCl
         // webView.getSettings().setSupportZoom(false);
     }
 
+
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -130,20 +144,32 @@ public class EvaluationDetailsActivity extends BaseActivity implements View.OnCl
                 finish();
                 break;
             case R.id.collect_ll:
-                if (!DBTool.getInstance().isUrlSave(link)) {
-                    CollectBean collectBean = new CollectBean(null, link);
+                if (i % 2 != 0) {
+                    // 没存 要存 单数
+                    heartIv.setSelected(true);
+                    CollectBean collectBean = new CollectBean(null, link,title);
                     DBTool.getInstance().insertUrl(collectBean);
+                    i = i + 1;
                 } else {
-                    CollectBean newCollectBean = new CollectBean(null, link);
+                    // 存过 要删 双数
+                    heartIv.setSelected(false);
+                    i = i + 1;
                     DBTool.getInstance().deleteUrlBy(link);
-                    DBTool.getInstance().insertUrl(newCollectBean);
                 }
 
-                // 存到 我的界面----我的收藏
-//                Intent intent = new Intent(EvaluationDetailsActivity.this, .class);
-//                intent.putExtra("link", link);
+
+
+//                  // 点击存数据库
+//                if (!DBTool.getInstance().isUrlSave(link)) {
+//                    CollectBean collectBean = new CollectBean(null, link,title);
+//                    DBTool.getInstance().insertUrl(collectBean);
 //
-//                startActivity(intent);
+//                }else{
+//                    CollectBean newCollectBean = new CollectBean(null, link,title);
+//                    DBTool.getInstance().deleteAll();
+//                    DBTool.getInstance().insertUrl(newCollectBean);
+//
+//                }
                 break;
             case R.id.eva_share_ll:
                 showShare();

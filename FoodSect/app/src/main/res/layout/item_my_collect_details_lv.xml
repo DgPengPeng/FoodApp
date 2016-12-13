@@ -8,16 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/history_empty"
-            android:layout_width="@dimen/history_empty_twenty"
-            android:layout_height="@dimen/history_empty_twenty"
-            android:layout_centerVertical="true"
-            android:layout_margin="@dimen/history_empty_margin_ten"
-            android:src="@mipmap/ic_history_empty" />
-
         <TextView
-            android:id="@+id/tv_item_search_details_lv"
+            android:id="@+id/tv_item_my_collect_details_lv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"

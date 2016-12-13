@@ -15,11 +15,11 @@ import java.util.List;
 /**
  * Created by dllo on 16/12/8.
  */
-public class SearchDetailsListViewAdapter extends BaseAdapter {
+public class MyCollectDetailsListViewAdapter extends BaseAdapter {
     private List<String> data;
     private Context context;
 
-    public SearchDetailsListViewAdapter(Context context) {
+    public MyCollectDetailsListViewAdapter(Context context) {
         this.context = context;
         data = new ArrayList<>();
     }
@@ -51,7 +51,7 @@ public class SearchDetailsListViewAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         MySeaDeaLvViewHolder mySeaDeaLvViewHolder = null;
         if (view == null){
-            view = LayoutInflater.from(context).inflate(R.layout.item_search_details_lv,viewGroup,false);
+            view = LayoutInflater.from(context).inflate(R.layout.item_my_collect_details_lv,viewGroup,false);
             mySeaDeaLvViewHolder = new MySeaDeaLvViewHolder(view);
             view.setTag(mySeaDeaLvViewHolder);
         }else {
@@ -64,7 +64,7 @@ public class SearchDetailsListViewAdapter extends BaseAdapter {
     class MySeaDeaLvViewHolder {
         private TextView showTv;
         public MySeaDeaLvViewHolder(View view) {
-            showTv = (TextView) view.findViewById(R.id.tv_item_search_details_lv);
+            showTv = (TextView) view.findViewById(R.id.tv_item_my_collect_details_lv);
         }
     }
 }

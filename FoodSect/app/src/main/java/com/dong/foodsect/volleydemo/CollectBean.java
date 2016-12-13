@@ -14,16 +14,18 @@ public class CollectBean {
     @Id
     private Long id;
     private String url;
+    private String title;
 
 
     @Transient
     private String say;
 
 
-    @Generated(hash = 825994761)
-    public CollectBean(Long id, String url) {
+    @Generated(hash = 258558950)
+    public CollectBean(Long id, String url, String title) {
         this.id = id;
         this.url = url;
+        this.title = title;
     }
 
 
@@ -50,5 +52,18 @@ public class CollectBean {
     public void setUrl(String url) {
         this.url = url;
     }
+
+
+    public String getTitle() {
+        return this.title;
+    }
+
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+
+
 
 }

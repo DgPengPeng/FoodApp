@@ -22,8 +22,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginLeft="5dp"
-                android:text="清空历史记录" />
+                android:layout_marginLeft="@dimen/tv_search_qingkong_margin_left_five"
+                android:text="@string/tv_search_qingkong" />
 
             <ImageView
                 android:layout_width="wrap_content"

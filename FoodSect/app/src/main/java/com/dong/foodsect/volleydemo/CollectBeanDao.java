@@ -24,6 +24,7 @@ public class CollectBeanDao extends AbstractDao<CollectBean, Long> {
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property Url = new Property(1, String.class, "url", false, "URL");
+        public final static Property Title = new Property(2, String.class, "title", false, "TITLE");
     }
 
 
@@ -40,7 +41,8 @@ public class CollectBeanDao extends AbstractDao<CollectBean, Long> {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"COLLECT_BEAN\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY ," + // 0: id
-                "\"URL\" TEXT);"); // 1: url
+                "\"URL\" TEXT," + // 1: url
+                "\"TITLE\" TEXT);"); // 2: title
     }
 
     /** Drops the underlying database table. */
@@ -62,6 +64,11 @@ public class CollectBeanDao extends AbstractDao<CollectBean, Long> {
         if (url != null) {
             stmt.bindString(2, url);
         }
+ 
+        String title = entity.getTitle();
+        if (title != null) {
+            stmt.bindString(3, title);
+        }
     }
 
     @Override
@@ -77,6 +84,11 @@ public class CollectBeanDao extends AbstractDao<CollectBean, Long> {
         if (url != null) {
             stmt.bindString(2, url);
         }
+ 
+        String title = entity.getTitle();
+        if (title != null) {
+            stmt.bindString(3, title);
+        }
     }
 
     @Override
@@ -88,7 +100,8 @@ public class CollectBeanDao extends AbstractDao<CollectBean, Long> {
     public CollectBean readEntity(Cursor cursor, int offset) {
         CollectBean entity = new CollectBean( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1) // url
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // url
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2) // title
         );
         return entity;
     }
@@ -97,6 +110,7 @@ public class CollectBeanDao extends AbstractDao<CollectBean, Long> {
     public void readEntity(Cursor cursor, CollectBean entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setUrl(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
+        entity.setTitle(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
      }
     
     @Override

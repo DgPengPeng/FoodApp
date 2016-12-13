@@ -12,6 +12,8 @@ import com.dong.foodsect.activity.EvaluationDetailsActivity;
 import com.dong.foodsect.adapter.EvaluationAdapter;
 import com.dong.foodsect.bean.EvaluationBean;
 import com.dong.foodsect.tools.AllUrl;
+import com.dong.foodsect.volleydemo.CollectBean;
+import com.dong.foodsect.volleydemo.DBTool;
 import com.dong.foodsect.volleydemo.NetHelper;
 import com.dong.foodsect.volleydemo.NetListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -114,6 +116,8 @@ public class EvaluationFragment extends BaseFragment {
 
                         Intent intent = new Intent(getContext(), EvaluationDetailsActivity.class);
                         String url = data.get(i - 1).getLink();
+                        String title = data.get(i - 1).getTitle();
+                        intent.putExtra("title",title);
                         intent.putExtra("url", url);
                         startActivity(intent);
 
